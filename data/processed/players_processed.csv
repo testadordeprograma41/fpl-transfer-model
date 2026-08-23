@@ -1,0 +1,607 @@
+player_name,team_name,position,price,total_points,points_per_game,form,minutes,selected_by_percent,expected_goals,expected_assists,expected_goal_involvements,xgi_per_90,value_season
+David Raya Martín,Arsenal,GK,6.0,6,6.0,6.0,90,37.8,0.0,0.0,0.0,0.0,1.0
+Kepa Arrizabalaga Revuelta,Arsenal,GK,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Illan Meslier,Arsenal,GK,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Gabriel dos Santos Magalhães,Arsenal,DEF,8.0,5,5.0,5.0,90,29.6,0.05,0.01,0.06,0.06,0.625
+Jurriën Timber,Arsenal,DEF,6.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+William Saliba,Arsenal,DEF,6.0,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Myles Lewis-Skelly,Arsenal,MID,5.5,3,3.0,3.0,90,0.7,0.06,0.11,0.17,0.17,0.5454545454545454
+Riccardo Calafiori,Arsenal,DEF,5.5,9,9.0,9.0,80,40.2,0.04,0.09,0.13,0.14625000000000002,1.6363636363636365
+Piero Hincapié,Arsenal,DEF,5.5,1,1.0,1.0,9,1.7,0.0,0.0,0.0,0.0,0.18181818181818182
+Benjamin White,Arsenal,DEF,5.5,11,11.0,11.0,90,5.0,0.18,0.21,0.39,0.38999999999999996,2.0
+Cristhian Mosquera,Arsenal,DEF,5.5,6,6.0,6.0,90,6.2,0.0,0.0,0.0,0.0,1.0909090909090908
+Bukayo Saka,Arsenal,MID,9.5,9,9.0,9.0,67,9.9,0.64,0.08,0.72,0.9671641791044775,0.9473684210526315
+Declan Rice,Arsenal,MID,7.5,3,3.0,3.0,67,17.9,0.07,0.08,0.15,0.20149253731343283,0.4
+Eberechi Eze,Arsenal,MID,6.5,1,1.0,1.0,14,2.0,0.04,0.0,0.04,0.2571428571428571,0.15384615384615385
+Martin Ødegaard,Arsenal,MID,6.5,11,11.0,11.0,75,9.3,0.21,0.1,0.31,0.372,1.6923076923076923
+Noni Madueke,Arsenal,MID,6.5,1,1.0,1.0,22,0.3,0.0,0.04,0.04,0.16363636363636364,0.15384615384615385
+Mikel Merino Zazón,Arsenal,MID,6.0,1,1.0,1.0,14,0.7,0.14,0.02,0.16,1.0285714285714285,0.16666666666666666
+Gabriel Martinelli Silva,Arsenal,MID,6.5,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Martín Zubimendi Ibáñez,Arsenal,MID,5.5,1,1.0,1.0,22,1.1,0.0,0.02,0.02,0.08181818181818182,0.18181818181818182
+Max Dowman,Arsenal,MID,5.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Ethan Nwaneri,Arsenal,MID,5.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Fábio Ferreira Vieira,Arsenal,MID,5.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Reiss Nelson,Arsenal,MID,5.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Viktor Gyökeres,Arsenal,FWD,7.5,0,0.0,0.0,0,8.5,0.0,0.0,0.0,0.0,0.0
+Kai Havertz,Arsenal,FWD,7.5,6,6.0,6.0,90,6.1,0.26,0.03,0.29,0.29,0.8
+Gabriel Fernando de Jesus,Arsenal,FWD,6.0,0,0.0,0.0,0,0.4,0.0,0.0,0.0,0.0,0.0
+Ezri Konsa Ngoyo,Arsenal,DEF,4.5,0,0.0,0.0,0,12.4,0.0,0.0,0.0,0.0,0.0
+Bruno Guimarães Rodriguez Moura,Arsenal,MID,7.0,0,0.0,0.0,0,3.8,0.0,0.0,0.0,0.0,0.0
+Christos Tzolis,Arsenal,MID,6.5,6,6.0,6.0,75,25.4,0.19,0.14,0.33,0.396,0.9230769230769231
+Emiliano Martínez Romero,Aston Villa,GK,5.0,0,0.0,0.0,0,4.4,0.0,0.0,0.0,0.0,0.0
+Marco Bizot,Aston Villa,GK,4.5,1,1.0,1.0,90,0.1,0.0,0.0,0.0,0.0,0.2222222222222222
+Lucas Digne,Aston Villa,DEF,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Matty Cash,Aston Villa,DEF,4.5,-1,-1.0,-1.0,90,8.8,0.0,0.0,0.0,0.0,-0.2222222222222222
+Tyrone Mings,Aston Villa,DEF,4.5,1,1.0,1.0,16,0.4,0.0,0.0,0.0,0.0,0.2222222222222222
+Pau Torres,Aston Villa,DEF,4.5,0,0.0,0.0,73,0.5,0.0,0.0,0.0,0.0,0.0
+Lamare Bogarde,Aston Villa,MID,5.0,1,1.0,1.0,16,0.1,0.0,0.0,0.0,0.0,0.2
+Ian Maatsen,Aston Villa,DEF,4.5,0,0.0,0.0,81,0.8,0.04,0.0,0.04,0.044444444444444446,0.0
+Victor Lindelöf,Aston Villa,DEF,4.5,-2,-2.0,-2.0,90,0.3,0.0,0.0,0.0,0.0,-0.4444444444444444
+Andrés García,Aston Villa,DEF,4.0,0,0.0,0.0,0,1.8,0.0,0.0,0.0,0.0,0.0
+Kosta Nedeljkovic,Aston Villa,DEF,4.0,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Emiliano Buendía Stati,Aston Villa,MID,6.0,2,2.0,2.0,85,1.4,0.13,0.09,0.22,0.23294117647058826,0.3333333333333333
+Leon Bailey,Aston Villa,MID,5.5,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+John McGinn,Aston Villa,MID,5.5,1,1.0,1.0,81,3.2,0.04,0.01,0.05,0.05555555555555555,0.18181818181818182
+Ross Barkley,Aston Villa,MID,5.0,2,2.0,2.0,73,0.2,0.1,0.02,0.12,0.14794520547945206,0.4
+Boubacar Kamara,Aston Villa,MID,5.0,2,2.0,2.0,90,0.4,0.0,0.0,0.0,0.0,0.4
+Amadou Onana,Aston Villa,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Samuel Iling-Junior,Aston Villa,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Bradley Burrowes,Aston Villa,MID,4.5,0,0.0,0.0,0,0.7,0.0,0.0,0.0,0.0,0.0
+George Hemmings,Aston Villa,MID,4.5,2,2.0,2.0,90,0.7,0.0,0.02,0.02,0.02,0.4444444444444444
+Alysson Edward Franco da Rocha dos Santos,Aston Villa,MID,5.0,1,1.0,1.0,8,0.0,0.0,0.0,0.0,0.0,0.2
+Johan Manzambi,Aston Villa,MID,6.0,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Joao Gomes,Aston Villa,MID,5.5,-2,-2.0,-2.0,39,0.1,0.0,0.01,0.01,0.023076923076923078,-0.36363636363636365
+Ollie Watkins,Aston Villa,FWD,8.0,0,0.0,0.0,0,10.2,0.0,0.0,0.0,0.0,0.0
+Tammy Abraham,Aston Villa,FWD,5.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Alejandro Garnacho Ferreyra,Aston Villa,MID,6.0,1,1.0,1.0,4,0.6,0.0,0.0,0.0,0.0,0.16666666666666666
+Brian Madjo,Aston Villa,FWD,5.5,0,0.0,0.0,0,0.5,0.0,0.0,0.0,0.0,0.0
+Matteo Ruggeri,Aston Villa,DEF,4.5,1,1.0,1.0,8,0.1,0.0,0.0,0.0,0.0,0.2222222222222222
+Zion Suzuki,Aston Villa,GK,5.0,0,0.0,0.0,0,0.8,0.0,0.0,0.0,0.0,0.0
+Triston Rowe,Aston Villa,DEF,4.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Đorđe Petrović,Bournemouth,GK,4.5,2,2.0,2.0,90,3.3,0.0,0.0,0.0,0.0,0.4444444444444444
+Fraser Forster,Bournemouth,GK,4.0,0,0.0,0.0,0,3.2,0.0,0.0,0.0,0.0,0.0
+Will Dennis,Bournemouth,GK,4.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+James Hill,Bournemouth,DEF,5.5,1,1.0,1.0,90,0.9,0.0,0.0,0.0,0.0,0.18181818181818182
+Adrien Truffert,Bournemouth,DEF,5.5,1,1.0,1.0,90,4.4,0.0,0.0,0.0,0.0,0.18181818181818182
+Bafodé Diakité,Bournemouth,DEF,5.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Veljko Milosavljevic,Bournemouth,DEF,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Adam Smith,Bournemouth,DEF,4.5,1,1.0,1.0,90,0.1,0.0,0.0,0.0,0.0,0.2222222222222222
+Julián Araujo Zúñiga,Bournemouth,DEF,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Julio Soler Barreto,Bournemouth,DEF,4.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Rayan Vitor Simplício Rocha,Bournemouth,MID,6.5,2,2.0,2.0,88,2.8,0.04,0.03,0.07,0.0715909090909091,0.3076923076923077
+Marcus Tavernier,Bournemouth,MID,6.0,10,10.0,10.0,90,1.7,0.4,0.03,0.43,0.43,1.6666666666666667
+Alex Scott,Bournemouth,MID,6.0,2,2.0,2.0,90,1.5,0.0,0.01,0.01,0.01,0.3333333333333333
+Justin Kluivert,Bournemouth,MID,6.0,3,3.0,3.0,74,1.2,0.11,0.0,0.11,0.13378378378378378,0.5
+Lewis Cook,Bournemouth,MID,5.0,3,3.0,3.0,75,0.2,0.0,0.0,0.0,0.0,0.6
+Ben Gannon-Doak,Bournemouth,MID,5.0,1,1.0,1.0,1,0.1,0.0,0.0,0.0,0.0,0.2
+Tyler Adams,Bournemouth,MID,5.0,1,1.0,1.0,15,0.2,0.0,0.0,0.0,0.0,0.2
+David Brooks,Bournemouth,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Ryan Christie,Bournemouth,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Alex Tóth,Bournemouth,MID,5.0,1,1.0,1.0,15,0.0,0.0,0.0,0.0,0.0,0.2
+Amine Adli,Bournemouth,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Junior Kroupi,Bournemouth,MID,7.5,0,0.0,0.0,0,0.4,0.0,0.0,0.0,0.0,0.0
+Francisco Evanilson de Lima Barbosa,Bournemouth,FWD,6.0,4,4.0,4.0,74,2.4,0.0,0.21,0.21,0.2554054054054054,0.6666666666666666
+Enes Ünal,Bournemouth,FWD,5.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Álvaro Rodríguez,Bournemouth,FWD,6.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+António João Pereira de Albuquerque Tavares da Silva,Bournemouth,DEF,5.0,2,2.0,2.0,90,0.3,0.0,0.0,0.0,0.0,0.4
+Juanlu Sánchez,Bournemouth,DEF,4.5,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Caoimhín Kelleher,Brentford,GK,5.0,7,7.0,7.0,90,5.9,0.0,0.01,0.01,0.01,1.4
+Hákon Rafn Valdimarsson,Brentford,GK,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Nathan Collins,Brentford,DEF,5.5,6,6.0,6.0,90,1.9,0.34,0.04,0.38,0.38000000000000006,1.0909090909090908
+Sepp van den Berg,Brentford,DEF,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Keane Lewis-Potter,Brentford,MID,5.5,10,10.0,10.0,90,0.6,0.77,0.12,0.89,0.8900000000000001,1.8181818181818181
+Kristoffer Ajer,Brentford,DEF,4.5,8,8.0,8.0,90,3.6,0.11,0.02,0.13,0.13,1.7777777777777777
+Michael Kayode,Brentford,DEF,4.5,13,13.0,13.0,75,4.1,0.5,0.0,0.5,0.6000000000000001,2.888888888888889
+Rico Henry,Brentford,DEF,4.5,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Aaron Hickey,Brentford,DEF,4.5,1,1.0,1.0,14,0.1,0.0,0.0,0.0,0.0,0.2222222222222222
+Ethan Pinnock,Brentford,DEF,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Kim Ji-soo,Brentford,DEF,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Jannik Schuster,Brentford,DEF,4.5,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Kevin Schade,Brentford,MID,6.0,3,3.0,3.0,90,3.6,0.52,0.01,0.53,0.53,0.5
+Dango Ouattara,Brentford,MID,6.5,3,3.0,3.0,66,1.2,0.05,0.29,0.34,0.4636363636363637,0.46153846153846156
+Mikkel Damsgaard,Brentford,MID,5.5,1,1.0,1.0,14,0.6,0.0,0.11,0.11,0.7071428571428572,0.18181818181818182
+Mathias Jensen,Brentford,MID,5.5,6,6.0,6.0,66,0.2,0.08,0.34,0.42,0.5727272727272726,1.0909090909090908
+Vitaly Janelt,Brentford,MID,5.0,9,9.0,9.0,90,0.2,0.39,0.17,0.56,0.56,1.8
+Antoni Milambo,Brentford,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Fábio Freitas Gouveia Carvalho,Brentford,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Yehor Yarmoliuk,Brentford,MID,5.0,1,1.0,1.0,23,1.3,0.04,0.0,0.04,0.1565217391304348,0.2
+Josh Dasilva,Brentford,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Jaidon Anthony,Brentford,MID,6.0,1,1.0,1.0,23,0.2,0.03,0.35,0.38,1.4869565217391303,0.16666666666666666
+Igor Thiago Nascimento Rodrigues,Brentford,FWD,8.0,0,0.0,0.0,82,17.2,1.0,0.08,1.08,1.1853658536585368,0.0
+Kaye Furo,Brentford,FWD,4.5,0,0.0,0.0,0,0.9,0.0,0.0,0.0,0.0,0.0
+Callum Wilson,Brentford,FWD,5.5,1,1.0,1.0,7,0.4,0.03,0.04,0.07,0.9,0.18181818181818182
+Mamadou Sangaré,Brentford,MID,5.5,14,14.0,14.0,75,4.2,0.05,0.33,0.38,0.45599999999999996,2.5454545454545454
+Bart Verbruggen,Brighton,GK,4.5,6,6.0,6.0,90,21.7,0.0,0.0,0.0,0.0,1.3333333333333333
+Jason Steele,Brighton,GK,4.0,0,0.0,0.0,0,4.1,0.0,0.0,0.0,0.0,0.0
+Ferdi Kadıoğlu,Brighton,DEF,4.5,0,0.0,0.0,0,2.8,0.0,0.0,0.0,0.0,0.0
+Olivier Boscagli,Brighton,DEF,4.5,6,6.0,6.0,90,0.2,0.0,0.04,0.04,0.04,1.3333333333333333
+Maxim De Cuyper,Brighton,DEF,4.5,17,17.0,17.0,77,2.3,1.4,0.18,1.58,1.8467532467532468,3.7777777777777777
+Lewis Dunk,Brighton,DEF,4.5,6,6.0,6.0,90,1.1,0.0,0.04,0.04,0.04,1.3333333333333333
+Diego Coppola,Brighton,DEF,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Igor Julio dos Santos de Paulo,Brighton,DEF,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+João Pedro Loureiro da Costa,Brighton,DEF,4.5,1,1.0,1.0,26,0.0,0.08,0.0,0.08,0.27692307692307694,0.2222222222222222
+Michael Svoboda,Brighton,DEF,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Mitoma Kaoru,Brighton,MID,6.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Yankuba Minteh,Brighton,MID,6.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Jack Hinshelwood,Brighton,MID,6.0,16,16.0,16.0,63,0.8,1.41,0.02,1.43,2.0428571428571427,2.6666666666666665
+Pascal Groß,Brighton,MID,5.5,2,2.0,2.0,90,14.1,0.0,0.25,0.25,0.25,0.36363636363636365
+Georginio Rutter,Brighton,FWD,5.5,5,5.0,5.0,90,0.9,0.07,0.44,0.51,0.51,0.9090909090909091
+Matt O'Riley,Brighton,MID,5.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Diego Gómez Amarilla,Brighton,MID,5.0,6,6.0,6.0,85,3.9,0.19,0.48,0.67,0.7094117647058823,1.2
+Facundo Buonanotte,Brighton,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Yasin Ayari,Brighton,MID,5.5,2,2.0,2.0,63,0.7,0.11,0.03,0.14,0.2,0.36363636363636365
+Mats Wieffer,Brighton,DEF,5.0,7,7.0,7.0,77,0.3,0.07,0.05,0.12,0.14025974025974025,1.4
+Carlos Baleba,Brighton,MID,5.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Harry Howell,Brighton,MID,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Tom Watson,Brighton,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Nehemiah Oriola,Brighton,MID,4.5,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Zadok Yohanna,Brighton,MID,5.0,1,1.0,1.0,12,0.1,0.0,0.02,0.02,0.15000000000000002,0.2
+Stefanos Tzimas,Brighton,FWD,5.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Charalampos Kostoulas,Brighton,FWD,5.5,1,1.0,1.0,26,0.2,0.16,0.0,0.16,0.5538461538461539,0.18181818181818182
+Evan Ferguson,Brighton,FWD,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Pascal Struijk,Brighton,DEF,5.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Luka Vušković,Brighton,DEF,5.0,6,6.0,6.0,90,2.5,0.19,0.03,0.22,0.22,1.2
+Promise David,Brighton,FWD,6.0,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Ibrahim Osman,Brighton,MID,5.0,1,1.0,1.0,12,0.0,0.0,0.05,0.05,0.375,0.2
+Malick Yalcouyé,Brighton,MID,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Morgan Rogers,Chelsea,MID,7.5,0,0.0,0.0,0,24.4,0.0,0.0,0.0,0.0,0.0
+Jordan Henderson,Chelsea,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Danny Welbeck,Chelsea,FWD,6.0,0,0.0,0.0,0,1.1,0.0,0.0,0.0,0.0,0.0
+Robert Lynch Sánchez,Chelsea,GK,5.0,0,0.0,0.0,0,2.4,0.0,0.0,0.0,0.0,0.0
+Filip Jörgensen,Chelsea,GK,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Reece James,Chelsea,DEF,5.5,0,0.0,0.0,0,10.3,0.0,0.0,0.0,0.0,0.0
+Trevoh Chalobah,Chelsea,DEF,5.5,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Malo Gusto,Chelsea,DEF,5.0,0,0.0,0.0,0,1.2,0.0,0.0,0.0,0.0,0.0
+Wesley Fofana,Chelsea,DEF,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Benoît Badiashile Mukinayi,Chelsea,DEF,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Tosin Adarabioyo,Chelsea,DEF,4.5,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Jorrel Hato,Chelsea,DEF,4.5,0,0.0,0.0,0,0.5,0.0,0.0,0.0,0.0,0.0
+Levi Samuels Colwill,Chelsea,DEF,5.0,0,0.0,0.0,0,1.6,0.0,0.0,0.0,0.0,0.0
+Mamadou Sarr,Chelsea,DEF,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Josh Acheampong,Chelsea,DEF,4.5,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Marco Palestra,Chelsea,DEF,5.5,0,0.0,0.0,0,3.0,0.0,0.0,0.0,0.0,0.0
+Axel Disasi,Chelsea,DEF,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Cole Palmer,Chelsea,MID,9.5,0,0.0,0.0,0,10.6,0.0,0.0,0.0,0.0,0.0
+Enzo Fernández,Chelsea,MID,7.0,0,0.0,0.0,0,5.3,0.0,0.0,0.0,0.0,0.0
+Pedro Lomba Neto,Chelsea,MID,6.5,0,0.0,0.0,0,1.4,0.0,0.0,0.0,0.0,0.0
+Estêvão Almeida de Oliveira Gonçalves,Chelsea,MID,6.5,0,0.0,0.0,0,1.3,0.0,0.0,0.0,0.0,0.0
+Jamie Bynoe-Gittens,Chelsea,MID,6.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Moisés Caicedo Corozo,Chelsea,MID,5.5,0,0.0,0.0,0,4.0,0.0,0.0,0.0,0.0,0.0
+Roméo Lavia,Chelsea,MID,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Dário Luís Essugo,Chelsea,MID,4.5,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Geovany Quenda,Chelsea,MID,5.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+João Pedro Junqueira de Jesus,Chelsea,FWD,7.5,0,0.0,0.0,0,64.0,0.0,0.0,0.0,0.0,0.0
+Nicolas Jackson,Chelsea,FWD,6.5,0,0.0,0.0,0,0.4,0.0,0.0,0.0,0.0,0.0
+Liam Delap,Chelsea,FWD,5.5,0,0.0,0.0,0,0.5,0.0,0.0,0.0,0.0,0.0
+Marc Guiu Paz,Chelsea,FWD,5.0,0,0.0,0.0,0,0.5,0.0,0.0,0.0,0.0,0.0
+Shumaira Mheuka,Chelsea,FWD,4.5,0,0.0,0.0,0,0.4,0.0,0.0,0.0,0.0,0.0
+Emmanuel Emegha,Chelsea,FWD,5.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Maxence Lacroix,Chelsea,DEF,6.0,0,0.0,0.0,0,9.1,0.0,0.0,0.0,0.0,0.0
+Mike Penders,Chelsea,GK,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Aaron Anselmino,Chelsea,DEF,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Valentín Barco,Chelsea,MID,5.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Mykhailo Mudryk,Chelsea,MID,5.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Pep Chavarría,Chelsea,DEF,5.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Frank Onyeka,Coventry City,MID,5.0,2,2.0,2.0,90,0.2,0.0,0.01,0.01,0.01,0.4
+Carl Rushworth,Coventry City,GK,4.5,1,1.0,1.0,90,1.2,0.0,0.01,0.01,0.01,0.2222222222222222
+Oliver Dovin,Coventry City,GK,4.0,0,0.0,0.0,0,1.6,0.0,0.0,0.0,0.0,0.0
+Ben Wilson,Coventry City,GK,4.5,0,0.0,0.0,0,0.5,0.0,0.0,0.0,0.0,0.0
+Bobby Thomas,Coventry City,DEF,4.0,3,3.0,3.0,90,8.1,0.02,0.01,0.03,0.03,0.75
+Liam Kitching,Coventry City,DEF,4.0,0,0.0,0.0,0,0.7,0.0,0.0,0.0,0.0,0.0
+Milan van Ewijk,Coventry City,DEF,4.0,1,1.0,1.0,90,13.7,0.0,0.01,0.01,0.01,0.25
+Jay Dasilva,Coventry City,DEF,4.0,1,1.0,1.0,90,0.9,0.0,0.02,0.02,0.02,0.25
+Kaine Kesler-Hayden,Coventry City,DEF,4.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Jake Bidwell,Coventry City,DEF,4.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Joel Latibeaudiere,Coventry City,DEF,4.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Luke Woolfenden,Coventry City,DEF,4.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Miguel Brau,Coventry City,DEF,4.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Aurèle Amenda,Coventry City,DEF,4.0,1,1.0,1.0,90,0.9,0.0,0.01,0.01,0.01,0.25
+Jack Rudoni,Coventry City,MID,5.0,1,1.0,1.0,20,0.1,0.15,0.0,0.15,0.6749999999999999,0.2
+Matt Grimes,Coventry City,MID,5.0,2,2.0,2.0,90,0.2,0.0,0.01,0.01,0.01,0.4
+Tatsuhiro Sakamoto,Coventry City,MID,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Ephron Mason-Clark,Coventry City,MID,5.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Josh Eccles,Coventry City,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Victor Torp,Coventry City,MID,5.5,1,1.0,1.0,28,0.2,0.0,0.11,0.11,0.3535714285714286,0.18181818181818182
+George Shepherd,Coventry City,MID,4.5,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Loum Tchaouna,Coventry City,MID,5.5,2,2.0,2.0,81,0.2,0.04,0.02,0.06,0.06666666666666667,0.36363636363636365
+Raphael Borges Rodrigues,Coventry City,MID,4.5,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Kaine Andrews,Coventry City,MID,4.5,0,0.0,0.0,0,0.7,0.0,0.0,0.0,0.0,0.0
+Haji Wright,Coventry City,FWD,5.5,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Brandon Thomas-Asante,Coventry City,FWD,5.0,2,2.0,2.0,69,0.8,0.0,0.02,0.02,0.02608695652173913,0.4
+Ellis Simms,Coventry City,FWD,5.0,2,2.0,2.0,69,0.9,0.0,0.01,0.01,0.013043478260869565,0.4
+Jahnoah Markelo,Coventry City,FWD,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Norman Bassette,Coventry City,FWD,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Taiwo Awoniyi,Coventry City,FWD,5.5,1,1.0,1.0,20,0.8,0.0,0.0,0.0,0.0,0.18181818181818182
+Caleb Yirenkyi,Coventry City,MID,5.0,1,1.0,1.0,61,0.3,0.0,0.0,0.0,0.0,0.2
+Gustavo Hamer,Coventry City,MID,5.5,1,1.0,1.0,8,0.2,0.0,0.0,0.0,0.0,0.18181818181818182
+Sidiki Cherif,Coventry City,FWD,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Evann Guessand,Crystal Palace,MID,5.5,1,1.0,1.0,27,0.0,0.03,0.02,0.05,0.16666666666666669,0.18181818181818182
+Dean Henderson,Crystal Palace,GK,5.0,2,2.0,2.0,90,1.9,0.0,0.0,0.0,0.0,0.4
+Walter Benítez,Crystal Palace,GK,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Daniel Muñoz Mejía,Crystal Palace,DEF,5.5,0,0.0,0.0,54,9.5,0.23,0.01,0.24,0.4,0.0
+Chris Richards,Crystal Palace,DEF,5.0,3,3.0,3.0,90,0.8,0.0,0.0,0.0,0.0,0.6
+Jaydee Canvot,Crystal Palace,DEF,5.0,1,1.0,1.0,90,0.3,0.05,0.01,0.06,0.06,0.2
+Tyrick Mitchell,Crystal Palace,DEF,4.5,1,1.0,1.0,90,6.2,0.0,0.01,0.01,0.01,0.2222222222222222
+Borna Sosa,Crystal Palace,DEF,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Chadi Riad Dnanou,Crystal Palace,DEF,4.5,1,1.0,1.0,72,0.1,0.0,0.01,0.01,0.0125,0.2222222222222222
+Oscar Mingueza,Crystal Palace,DEF,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Ismaïla Sarr,Crystal Palace,MID,6.5,0,0.0,0.0,0,4.2,0.0,0.0,0.0,0.0,0.0
+Adam Wharton,Crystal Palace,MID,5.5,4,4.0,4.0,90,0.9,0.0,0.24,0.24,0.24,0.7272727272727273
+Yéremy Pino Santos,Crystal Palace,MID,5.5,1,1.0,1.0,35,0.2,0.06,0.02,0.08,0.20571428571428574,0.18181818181818182
+Will Hughes,Crystal Palace,MID,4.5,0,0.0,0.0,0,11.8,0.0,0.0,0.0,0.0,0.0
+Jefferson Lerma Solís,Crystal Palace,MID,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Daichi Kamada,Crystal Palace,MID,5.0,3,3.0,3.0,90,0.3,0.0,0.27,0.27,0.27,0.6
+Justin Devenny,Crystal Palace,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Romain Esse,Crystal Palace,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Matheus França de Oliveira,Crystal Palace,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Cheick Doucouré,Crystal Palace,MID,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Jesurun Rak-Sakyi,Crystal Palace,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Rio Cardines,Crystal Palace,DEF,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Joél Drakes-Thomas,Crystal Palace,MID,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Jørgen Strand Larsen,Crystal Palace,FWD,6.0,1,1.0,1.0,27,0.6,0.25,0.01,0.26,0.8666666666666667,0.16666666666666666
+Jean-Philippe Mateta,Crystal Palace,FWD,6.5,2,2.0,2.0,62,5.7,0.7,0.02,0.72,1.0451612903225806,0.3076923076923077
+Eddie Nketiah,Crystal Palace,FWD,5.5,1,1.0,1.0,55,0.5,0.6,0.58,1.18,1.9309090909090907,0.18181818181818182
+Christantus Uche,Crystal Palace,FWD,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Dwight McNeil,Crystal Palace,MID,5.5,2,2.0,2.0,62,0.2,0.05,0.02,0.07,0.10161290322580646,0.36363636363636365
+Remi Matthews,Crystal Palace,GK,4.0,0,0.0,0.0,0,1.8,0.0,0.0,0.0,0.0,0.0
+Takehiro Tomiyasu,Crystal Palace,DEF,4.5,1,1.0,1.0,18,0.4,0.0,0.01,0.01,0.05,0.2222222222222222
+Anan Khalaili,Crystal Palace,DEF,5.0,1,1.0,1.0,35,0.1,0.0,0.16,0.16,0.4114285714285715,0.2
+Zavier Gozo,Crystal Palace,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Christian Nørgaard,Everton,MID,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Brennan Johnson,Everton,MID,6.0,1,1.0,1.0,6,0.2,0.0,0.0,0.0,0.0,0.16666666666666666
+Jordan Pickford,Everton,GK,5.5,7,7.0,7.0,90,8.2,0.0,0.02,0.02,0.02,1.2727272727272727
+Mark Travers,Everton,GK,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Tom King,Everton,GK,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+James Tarkowski,Everton,DEF,6.0,6,6.0,6.0,90,8.8,0.05,0.0,0.05,0.05,1.0
+Jarrad Branthwaite,Everton,DEF,5.5,6,6.0,6.0,90,1.7,0.0,0.01,0.01,0.01,1.0909090909090908
+Michael Keane,Everton,DEF,5.0,0,0.0,0.0,0,1.6,0.0,0.0,0.0,0.0,0.0
+Jake O'Brien,Everton,DEF,5.0,0,0.0,0.0,0,0.5,0.0,0.0,0.0,0.0,0.0
+Vitalii Mykolenko,Everton,DEF,4.5,6,6.0,6.0,90,1.6,0.0,0.05,0.05,0.05,1.3333333333333333
+Nathan Patterson,Everton,DEF,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Adam Aznou,Everton,DEF,4.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Kiernan Dewsbury-Hall,Everton,MID,6.5,11,11.0,11.0,90,3.8,0.12,0.17,0.29,0.29,1.6923076923076923
+Iliman Ndiaye,Everton,MID,6.0,9,9.0,9.0,90,16.0,0.24,0.32,0.56,0.56,1.5
+James Garner,Everton,MID,6.0,1,1.0,1.0,11,0.1,0.0,0.03,0.03,0.24545454545454543,0.16666666666666666
+Tim Iroegbunam,Everton,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Tyrique George,Everton,MID,5.5,3,3.0,3.0,83,0.3,0.18,0.08,0.26,0.28192771084337354,0.5454545454545454
+Carlos Alcaraz Durán,Everton,MID,5.0,1,1.0,1.0,1,0.1,0.02,0.0,0.02,1.8,0.2
+Harrison Armstrong,Everton,MID,5.0,8,8.0,8.0,90,0.1,0.0,0.04,0.04,0.04,1.6
+Tyler Dibling,Everton,MID,5.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Merlin Röhl,Everton,MID,5.0,3,3.0,3.0,90,0.1,0.0,0.06,0.06,0.06,0.6
+Hayden Hackney,Everton,MID,5.5,3,3.0,3.0,78,0.3,0.01,0.01,0.02,0.023076923076923078,0.5454545454545454
+Norberto Bercique Gomes Betuncal,Everton,FWD,5.5,1,1.0,1.0,11,2.7,0.05,0.0,0.05,0.40909090909090917,0.18181818181818182
+Thierno Barry,Everton,FWD,5.5,8,8.0,8.0,78,1.6,0.45,0.09,0.54,0.6230769230769231,1.4545454545454546
+Bernd Leno,Fulham,GK,4.5,0,0.0,0.0,0,3.1,0.0,0.0,0.0,0.0,0.0
+Benjamin Lecomte,Fulham,GK,4.0,0,0.0,0.0,0,1.2,0.0,0.0,0.0,0.0,0.0
+Alfie McNally,Fulham,GK,4.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Joachim Andersen,Fulham,DEF,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Antonee Robinson,Fulham,DEF,4.5,0,0.0,0.0,0,1.7,0.0,0.0,0.0,0.0,0.0
+Jorge Cuenca Barreno,Fulham,DEF,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Kenny Tete,Fulham,DEF,4.5,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Calvin Bassey,Fulham,DEF,4.5,0,0.0,0.0,0,0.8,0.0,0.0,0.0,0.0,0.0
+Timothy Castagne,Fulham,DEF,4.5,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Alex Iwobi,Fulham,MID,5.5,0,0.0,0.0,0,1.0,0.0,0.0,0.0,0.0,0.0
+Emile Smith Rowe,Fulham,MID,5.5,0,0.0,0.0,0,0.4,0.0,0.0,0.0,0.0,0.0
+Kevin Santos Lopes de Macedo,Fulham,MID,5.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Oscar Bobb,Fulham,MID,5.5,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Sander Berge,Fulham,MID,5.0,0,0.0,0.0,0,0.4,0.0,0.0,0.0,0.0,0.0
+Tom Cairney,Fulham,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Josh King,Fulham,MID,5.5,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Ryan Sessegnon,Fulham,DEF,4.5,0,0.0,0.0,0,0.5,0.0,0.0,0.0,0.0,0.0
+Harrison Reed,Fulham,MID,4.5,0,0.0,0.0,0,1.6,0.0,0.0,0.0,0.0,0.0
+Rodrigo Muniz Carvalho,Fulham,FWD,5.5,0,0.0,0.0,0,0.6,0.0,0.0,0.0,0.0,0.0
+Jonah Kusi-Asare,Fulham,FWD,4.5,0,0.0,0.0,0,7.4,0.0,0.0,0.0,0.0,0.0
+Gonzalo García,Fulham,FWD,6.0,0,0.0,0.0,0,2.1,0.0,0.0,0.0,0.0,0.0
+César Palacios,Fulham,MID,5.5,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Shea Charles,Fulham,MID,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Dillon Phillips,Hull City,GK,4.0,0,0.0,0.0,0,1.6,0.0,0.0,0.0,0.0,0.0
+Jack Butland,Hull City,GK,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Harvey Cartwright,Hull City,GK,4.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Thimothée Lo-Tutala,Hull City,GK,4.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+John Egan,Hull City,DEF,4.0,8,8.0,8.0,90,1.7,0.0,0.0,0.0,0.0,2.0
+Charlie Hughes,Hull City,DEF,4.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Semi Ajayi,Hull City,DEF,4.0,14,14.0,14.0,63,1.3,0.52,0.0,0.52,0.7428571428571429,3.5
+Lewie Coyle,Hull City,DEF,4.0,6,6.0,6.0,69,0.7,0.0,0.01,0.01,0.013043478260869565,1.5
+Cody Drameh,Hull City,DEF,4.0,1,1.0,1.0,20,0.0,0.05,0.0,0.05,0.225,0.25
+Ryan Giles,Hull City,DEF,4.0,6,6.0,6.0,84,0.8,0.02,0.07,0.09,0.09642857142857143,1.5
+Matty Jacob,Hull City,DEF,4.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Cathal McCarthy,Hull City,DEF,4.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Paddy McNair,Hull City,DEF,4.0,1,1.0,1.0,26,0.1,0.0,0.0,0.0,0.0,0.25
+Mohamed Belloumi,Hull City,MID,5.0,3,3.0,3.0,90,0.5,0.05,0.03,0.08,0.08,0.6
+Liam Millar,Hull City,MID,5.0,0,0.0,0.0,19,0.1,0.0,0.0,0.0,0.0,0.0
+Kieran Dowell,Hull City,MID,4.5,0,0.0,0.0,0,0.4,0.0,0.0,0.0,0.0,0.0
+Matt Crooks,Hull City,MID,4.5,2,2.0,2.0,90,0.7,0.0,0.0,0.0,0.0,0.4444444444444444
+Regan Slater,Hull City,MID,4.5,6,6.0,6.0,90,3.3,0.0,0.44,0.44,0.44,1.3333333333333333
+Eliot Matazo,Hull City,MID,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Abdülkadir Ömür,Hull City,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Abu Kamara,Hull City,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Óscar Zambrano,Hull City,MID,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Oli McBurnie,Hull City,FWD,5.5,5,5.0,5.0,90,1.5,0.16,0.01,0.17,0.17,0.9090909090909091
+David Akintola,Hull City,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Darko Gyabi,Hull City,MID,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Enis Destan,Hull City,FWD,4.5,0,0.0,0.0,0,0.4,0.0,0.0,0.0,0.0,0.0
+Mason Burstow,Hull City,FWD,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Joe Gelhardt,Hull City,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Matt Targett,Hull City,DEF,4.0,1,1.0,1.0,5,2.4,0.0,0.0,0.0,0.0,0.25
+Hidemasa Morita,Hull City,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Konstantinos Tzolakis,Hull City,GK,4.5,10,10.0,10.0,90,1.0,0.0,0.0,0.0,0.0,2.2222222222222223
+Jens Hjertø-Dahl,Hull City,MID,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Elliot Stroud,Hull City,MID,5.0,3,3.0,3.0,70,0.1,0.0,0.03,0.03,0.03857142857142857,0.6
+Lucas Herrington,Hull City,DEF,4.0,1,1.0,1.0,26,0.7,0.0,0.0,0.0,0.0,0.25
+Nobel Mendy,Hull City,DEF,4.0,15,15.0,15.0,63,1.6,0.28,0.0,0.28,0.4,3.75
+Lucas Gourna-Douath,Hull City,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Issa Diop,Ipswich Town,DEF,4.0,2,2.0,2.0,90,18.1,0.0,0.01,0.01,0.01,0.5
+Saša Lukić,Ipswich Town,MID,5.0,5,5.0,5.0,90,0.1,0.0,0.02,0.02,0.02,1.0
+Christian Walton,Ipswich Town,GK,4.5,0,0.0,0.0,0,0.5,0.0,0.0,0.0,0.0,0.0
+Alex Palmer,Ipswich Town,GK,4.0,0,0.0,0.0,0,4.7,0.0,0.0,0.0,0.0,0.0
+David Button,Ipswich Town,GK,4.0,0,0.0,0.0,0,0.5,0.0,0.0,0.0,0.0,0.0
+Cédric Kipré,Ipswich Town,DEF,4.0,0,0.0,0.0,0,0.7,0.0,0.0,0.0,0.0,0.0
+Dara O'Shea,Ipswich Town,DEF,4.0,4,4.0,4.0,90,3.5,0.0,0.16,0.16,0.16,1.0
+Leif Davis,Ipswich Town,DEF,4.0,2,2.0,2.0,90,5.2,0.0,0.01,0.01,0.01,0.5
+Jacob Greaves,Ipswich Town,DEF,4.0,2,2.0,2.0,90,1.5,0.0,0.0,0.0,0.0,0.5
+Ben Johnson,Ipswich Town,DEF,4.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Darnell Furlong,Ipswich Town,DEF,4.0,0,0.0,0.0,0,0.7,0.0,0.0,0.0,0.0,0.0
+Marcelino Núñez,Ipswich Town,MID,5.0,4,4.0,4.0,79,0.1,0.03,0.03,0.06,0.06835443037974684,0.8
+Azor Matusiwa,Ipswich Town,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Wes Burns,Ipswich Town,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Jack Taylor,Ipswich Town,MID,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Jack Clarke,Ipswich Town,MID,5.5,7,7.0,7.0,19,0.3,0.1,0.0,0.1,0.47368421052631576,1.2727272727272727
+Chiedozie Ogbene,Ipswich Town,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Abdul Fatawu,Ipswich Town,MID,5.5,2,2.0,2.0,65,0.2,0.0,0.41,0.41,0.5676923076923077,0.36363636363636365
+Emersonn Correia da Silva,Ipswich Town,FWD,5.5,9,9.0,9.0,65,0.7,0.82,0.06,0.88,1.2184615384615385,1.6363636363636365
+George Hirst,Ipswich Town,FWD,5.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Jaden Philogene,Ipswich Town,MID,5.5,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Sam Szmodics,Ipswich Town,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Chuba Akpom,Ipswich Town,FWD,5.0,1,1.0,1.0,24,0.6,0.0,0.0,0.0,0.0,0.2
+Sindre Walle Egeli,Ipswich Town,FWD,4.5,1,1.0,1.0,10,2.2,0.0,0.0,0.0,0.0,0.2222222222222222
+Ali Al-Hamadi,Ipswich Town,FWD,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Kasey McAteer,Ipswich Town,MID,4.5,1,1.0,1.0,24,1.4,0.0,0.0,0.0,0.0,0.2222222222222222
+Anis Mehmeti,Ipswich Town,MID,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Kayne van Oevelen,Ipswich Town,GK,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Daizen Maeda,Ipswich Town,MID,5.5,2,2.0,2.0,79,0.4,0.61,0.0,0.61,0.6949367088607594,0.36363636363636365
+Kjell Scherpen,Ipswich Town,GK,4.5,2,2.0,2.0,90,0.7,0.0,0.0,0.0,0.0,0.4444444444444444
+Florentino Ibrain Morris Luís,Ipswich Town,MID,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Julio Enciso,Ipswich Town,MID,5.5,5,5.0,5.0,70,0.3,0.23,0.31,0.54,0.6942857142857144,0.9090909090909091
+Abdoul Ouattara,Ipswich Town,DEF,4.0,1,1.0,1.0,10,1.1,0.0,0.0,0.0,0.0,0.25
+Cameron Humphreys,Ipswich Town,MID,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Harry Wilson,Leeds,MID,6.5,3,3.0,3.0,65,6.2,0.0,0.02,0.02,0.027692307692307693,0.46153846153846156
+Lucas Estella Perri,Leeds,GK,4.5,0,0.0,0.0,0,0.6,0.0,0.0,0.0,0.0,0.0
+Jaka Bijol,Leeds,DEF,5.0,10,10.0,10.0,90,0.5,0.11,0.0,0.11,0.11,2.0
+Joe Rodon,Leeds,DEF,4.5,6,6.0,6.0,90,3.6,0.03,0.06,0.09,0.09,1.3333333333333333
+Jayden Bogle,Leeds,DEF,4.5,6,6.0,6.0,90,0.5,0.0,0.0,0.0,0.0,1.3333333333333333
+Gabriel Gudmundsson,Leeds,DEF,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+James Justin,Leeds,DEF,4.5,10,10.0,10.0,90,0.7,0.0,0.01,0.01,0.01,2.2222222222222223
+Sebastiaan Bornauw,Leeds,DEF,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Tarik Muharemović,Leeds,DEF,5.0,6,6.0,6.0,90,3.4,0.09,0.0,0.09,0.09,1.2
+Anton Stach,Leeds,MID,6.0,13,13.0,13.0,90,1.2,0.1,0.05,0.15,0.15,2.1666666666666665
+Noah Okafor,Leeds,MID,6.0,1,1.0,1.0,24,0.5,0.0,0.16,0.16,0.6000000000000001,0.16666666666666666
+Brenden Aaronson,Leeds,MID,5.5,3,3.0,3.0,81,0.9,0.01,0.01,0.02,0.022222222222222223,0.5454545454545454
+Ethan Ampadu,Leeds,MID,5.5,5,5.0,5.0,90,1.4,0.0,0.04,0.04,0.04,0.9090909090909091
+Sean Longstaff,Leeds,MID,5.0,1,1.0,1.0,8,0.1,0.0,0.0,0.0,0.0,0.2
+Wilfried Gnonto,Leeds,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Jack Harrison,Leeds,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Daniel James,Leeds,MID,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Ilia Gruev,Leeds,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Tanaka Ao,Leeds,MID,5.0,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Dominic Calvert-Lewin,Leeds,FWD,6.0,1,1.0,1.0,90,30.6,0.13,0.0,0.13,0.13,0.16666666666666666
+Lukas Nmecha,Leeds,FWD,5.5,0,0.0,0.0,0,0.6,0.0,0.0,0.0,0.0,0.0
+Joël Piroe,Leeds,FWD,5.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Mateo Joseph Fernández-Regatillo,Leeds,FWD,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+James Trafford,Leeds,GK,5.0,9,9.0,9.0,90,3.2,0.0,0.0,0.0,0.0,1.8
+Nico Elvedi,Leeds,DEF,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Jayden Lienou,Leeds,DEF,4.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Alfie Cresswell,Leeds,MID,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Alisson Becker,Liverpool,GK,5.5,2,2.0,2.0,90,3.6,0.0,0.0,0.0,0.0,0.36363636363636365
+Giorgi Mamardashvili,Liverpool,GK,5.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Freddie Woodman,Liverpool,GK,4.0,0,0.0,0.0,0,1.1,0.0,0.0,0.0,0.0,0.0
+Armin Pecsi,Liverpool,GK,4.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Vitezslav Jaros,Liverpool,GK,4.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Harvey Davies,Liverpool,GK,4.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Virgil van Dijk,Liverpool,DEF,6.5,2,2.0,2.0,90,19.5,0.21,0.01,0.22,0.22,0.3076923076923077
+Jeremie Frimpong,Liverpool,DEF,5.5,0,0.0,0.0,90,3.6,0.01,0.09,0.1,0.1,0.0
+Milos Kerkez,Liverpool,DEF,5.5,0,0.0,0.0,90,3.8,0.02,0.02,0.04,0.04,0.0
+Joe Gomez,Liverpool,DEF,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Conor Bradley,Liverpool,DEF,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Wellity Lucky,Liverpool,DEF,4.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Jeremy Jacquet,Liverpool,DEF,5.0,1,1.0,1.0,69,2.4,0.0,0.02,0.02,0.02608695652173913,0.2
+Giovanni Leoni,Liverpool,DEF,4.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Kostas Tsimikas,Liverpool,DEF,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Calvin Ramsay,Liverpool,DEF,4.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Florian Wirtz,Liverpool,MID,7.5,2,2.0,2.0,62,12.7,0.17,0.04,0.21,0.30483870967741933,0.26666666666666666
+Cody Gakpo,Liverpool,MID,7.0,10,10.0,10.0,90,3.7,0.24,0.15,0.39,0.38999999999999996,1.4285714285714286
+Dominik Szoboszlai,Liverpool,MID,7.0,8,8.0,8.0,90,41.8,0.85,0.27,1.12,1.12,1.1428571428571428
+Rio Ngumoha,Liverpool,MID,6.0,2,2.0,2.0,62,1.2,0.04,0.02,0.06,0.08709677419354839,0.3333333333333333
+Federico Chiesa,Liverpool,MID,5.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Ryan Gravenberch,Liverpool,MID,6.0,5,5.0,5.0,77,1.9,0.06,0.05,0.11,0.12857142857142856,0.8333333333333334
+Alexis Mac Allister,Liverpool,MID,5.5,1,1.0,1.0,27,1.7,0.0,0.01,0.01,0.03333333333333333,0.18181818181818182
+Curtis Jones,Liverpool,MID,5.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Endo Wataru,Liverpool,MID,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Trey Nyoni,Liverpool,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Stefan Bajčetić Maquieira,Liverpool,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Victor Munoz,Liverpool,MID,6.5,4,4.0,4.0,27,0.6,0.08,0.04,0.12,0.4,0.6153846153846154
+James McConnell,Liverpool,MID,4.5,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Alexander Isak,Liverpool,FWD,9.0,2,2.0,2.0,90,17.0,1.03,0.01,1.04,1.04,0.2222222222222222
+Hugo Ekitiké,Liverpool,FWD,7.5,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Lewis Koumas,Liverpool,MID,5.0,1,1.0,1.0,12,0.0,0.04,0.0,0.04,0.30000000000000004,0.2
+Jayden Danns,Liverpool,FWD,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Harvey Elliott,Liverpool,MID,5.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Ronald Araujo,Liverpool,DEF,5.5,1,1.0,1.0,20,2.7,0.0,0.03,0.03,0.135,0.18181818181818182
+Jack Grealish,Man City,MID,6.5,1,1.0,1.0,8,0.2,0.0,0.0,0.0,0.0,0.15384615384615385
+Gianluigi Donnarumma,Man City,GK,5.5,3,3.0,3.0,90,8.3,0.0,0.0,0.0,0.0,0.5454545454545454
+Marcus Bettinelli,Man City,GK,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Nico O'Reilly,Man City,DEF,6.5,2,2.0,2.0,62,21.4,0.07,0.41,0.48,0.6967741935483871,0.3076923076923077
+Marc Guéhi,Man City,DEF,6.0,10,10.0,10.0,90,17.4,0.89,0.31,1.2,1.2,1.6666666666666667
+Matheus Nunes,Man City,DEF,6.0,1,1.0,1.0,33,1.6,0.0,0.04,0.04,0.10909090909090909,0.16666666666666666
+Rúben dos Santos Gato Alves Dias,Man City,DEF,5.5,2,2.0,2.0,90,1.8,0.0,0.14,0.14,0.14,0.36363636363636365
+Joško Gvardiol,Man City,DEF,5.5,9,9.0,9.0,90,11.4,0.19,0.05,0.24,0.24,1.6363636363636365
+Rayan Aït-Nouri,Man City,DEF,5.5,0,0.0,0.0,0,0.9,0.0,0.0,0.0,0.0,0.0
+Abdukodir Khusanov,Man City,DEF,5.5,2,2.0,2.0,90,1.8,0.0,0.02,0.02,0.02,0.36363636363636365
+Max Alleyne,Man City,DEF,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Rico Lewis,Man City,DEF,4.5,1,1.0,1.0,56,0.2,0.17,0.02,0.19,0.3053571428571428,0.2222222222222222
+Vitor de Oliveira Nunes dos Reis,Man City,DEF,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Antoine Semenyo,Man City,MID,8.5,2,2.0,2.0,90,26.0,0.06,0.02,0.08,0.08,0.23529411764705882
+Phil Foden,Man City,MID,7.0,1,1.0,1.0,81,4.4,0.12,0.4,0.52,0.5777777777777778,0.14285714285714285
+Rayan Cherki,Man City,MID,7.5,8,8.0,8.0,27,8.4,0.0,0.47,0.47,1.5666666666666667,1.0666666666666667
+Jérémy Doku,Man City,MID,7.5,0,0.0,0.0,0,1.8,0.0,0.0,0.0,0.0,0.0
+Omar Marmoush,Man City,FWD,7.0,0,0.0,0.0,0,1.0,0.0,0.0,0.0,0.0,0.0
+Rodrigo 'Rodri' Hernandez Cascante,Man City,MID,6.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Sávio Moreira de Oliveira,Man City,MID,6.5,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Tijjani Reijnders,Man City,MID,6.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Nico González Iglesias,Man City,MID,5.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Mateo Kovačić,Man City,MID,5.5,1,1.0,1.0,27,0.1,0.0,0.01,0.01,0.03333333333333333,0.18181818181818182
+Claudio Echeverri,Man City,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Kalvin Phillips,Man City,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Divine Mukasa,Man City,MID,4.5,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Jeremy Monga,Man City,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Erling Haaland,Man City,FWD,15.5,2,2.0,2.0,90,69.1,0.85,0.02,0.87,0.87,0.12903225806451613
+Elliot Anderson,Man City,MID,6.5,2,2.0,2.0,62,7.7,0.0,0.25,0.25,0.3629032258064516,0.3076923076923077
+Gerónimo Rulli,Man City,GK,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Youri Tielemans,Man Utd,MID,6.0,2,2.0,2.0,66,2.6,0.04,0.11,0.15,0.20454545454545453,0.3333333333333333
+Andrey Nascimento dos Santos,Man Utd,MID,5.0,2,2.0,2.0,66,1.1,0.0,0.23,0.23,0.31363636363636366,0.4
+Karl Darlow,Man Utd,GK,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Senne Lammens,Man Utd,GK,5.0,1,1.0,1.0,90,16.4,0.0,0.0,0.0,0.0,0.2
+Altay Bayındır,Man Utd,GK,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Tom Heaton,Man Utd,GK,4.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Patrick Dorgu,Man Utd,MID,6.0,0,0.0,0.0,45,1.3,0.47,0.03,0.5,1.0,0.0
+Matthijs de Ligt,Man Utd,DEF,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Diogo Dalot Teixeira,Man Utd,DEF,5.0,1,1.0,1.0,10,2.7,0.0,0.0,0.0,0.0,0.2
+Harry Maguire,Man Utd,DEF,5.0,1,1.0,1.0,90,18.0,0.04,0.4,0.44,0.44,0.2
+Lisandro Martínez,Man Utd,DEF,5.0,0,0.0,0.0,0,1.4,0.0,0.0,0.0,0.0,0.0
+Leny Yoro,Man Utd,DEF,5.0,0,0.0,0.0,0,0.7,0.0,0.0,0.0,0.0,0.0
+Ayden Heaven,Man Utd,DEF,4.5,1,1.0,1.0,90,0.4,0.12,0.04,0.16,0.16,0.2222222222222222
+Noussair Mazraoui,Man Utd,DEF,4.5,1,1.0,1.0,79,0.7,0.22,0.05,0.27,0.3075949367088608,0.2222222222222222
+Luke Shaw,Man Utd,DEF,4.5,1,1.0,1.0,90,21.0,0.0,0.26,0.26,0.26,0.2222222222222222
+Harry Amass,Man Utd,DEF,4.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Tyler Fredricson,Man Utd,DEF,4.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Bruno Borges Fernandes,Man Utd,MID,12.0,2,2.0,2.0,90,51.0,0.08,0.26,0.34,0.34,0.16666666666666666
+Bryan Mbeumo,Man Utd,MID,8.0,2,2.0,2.0,90,38.0,0.5,0.23,0.73,0.73,0.25
+Matheus Santos Carneiro da Cunha,Man Utd,MID,8.0,2,2.0,2.0,79,10.0,0.24,0.21,0.45,0.5126582278481012,0.25
+Marcus Rashford,Man Utd,MID,7.0,1,1.0,1.0,45,1.7,0.0,0.1,0.1,0.2,0.14285714285714285
+Mason Mount,Man Utd,MID,5.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Amad Diallo,Man Utd,MID,6.0,0,0.0,0.0,0,1.5,0.0,0.0,0.0,0.0,0.0
+Kobbie Mainoo,Man Utd,MID,5.5,1,1.0,1.0,23,1.0,0.07,0.01,0.08,0.3130434782608696,0.18181818181818182
+Manuel Ugarte Ribeiro,Man Utd,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Jack Fletcher,Man Utd,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Shea Lacey,Man Utd,MID,5.0,1,1.0,1.0,10,0.0,0.0,0.0,0.0,0.0,0.2
+Toby Collyer,Man Utd,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Bendito Mantato,Man Utd,MID,4.5,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Tyler Fletcher,Man Utd,MID,4.5,0,0.0,0.0,0,0.4,0.0,0.0,0.0,0.0,0.0
+Benjamin Sesko,Man Utd,FWD,7.0,1,1.0,1.0,23,1.5,0.04,0.0,0.04,0.1565217391304348,0.14285714285714285
+Joshua Zirkzee,Man Utd,FWD,5.5,0,0.0,0.0,0,0.6,0.0,0.0,0.0,0.0,0.0
+Chido Obi,Man Utd,FWD,4.5,0,0.0,0.0,0,1.2,0.0,0.0,0.0,0.0,0.0
+Nick Pope,Newcastle,GK,5.0,0,0.0,0.0,0,1.4,0.0,0.0,0.0,0.0,0.0
+Mark Gillespie,Newcastle,GK,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Ewen Jaouen,Newcastle,GK,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Malick Thiaw,Newcastle,DEF,5.0,3,3.0,3.0,90,1.7,0.0,0.0,0.0,0.0,0.6
+Fabian Schär,Newcastle,DEF,5.0,1,1.0,1.0,1,0.3,0.0,0.0,0.0,0.0,0.2
+Sven Botman,Newcastle,DEF,5.0,3,3.0,3.0,90,0.4,0.0,0.01,0.01,0.01,0.6
+Dan Burn,Newcastle,DEF,5.0,0,0.0,0.0,0,2.5,0.0,0.0,0.0,0.0,0.0
+Lewis Hall,Newcastle,DEF,5.0,3,3.0,3.0,90,3.7,0.0,0.35,0.35,0.35,0.6
+Tino Livramento,Newcastle,DEF,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Alex Murphy,Newcastle,DEF,4.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Harvey Barnes,Newcastle,MID,6.0,2,2.0,2.0,90,1.1,0.06,0.02,0.08,0.08,0.3333333333333333
+Anthony Elanga,Newcastle,MID,6.0,10,10.0,10.0,75,0.9,0.11,0.01,0.12,0.144,1.6666666666666667
+Jacob Ramsey,Newcastle,MID,5.0,0,0.0,0.0,34,0.4,0.09,0.01,0.1,0.2647058823529412,0.0
+Jacob Murphy,Newcastle,MID,6.0,0,0.0,0.0,14,0.2,0.0,0.0,0.0,0.0,0.0
+Joelinton Cássio Apolinário de Lira,Newcastle,MID,5.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Lewis Miley,Newcastle,MID,5.5,3,3.0,3.0,75,0.1,0.05,0.01,0.06,0.072,0.5454545454545454
+Joe Willock,Newcastle,MID,5.0,6,6.0,6.0,34,0.1,0.09,0.17,0.26,0.6882352941176471,1.2
+Bazoumana Touré,Newcastle,MID,6.0,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Sean Steur,Newcastle,MID,5.0,1,1.0,1.0,55,0.1,0.0,0.0,0.0,0.0,0.2
+Nick Woltemade,Newcastle,FWD,6.0,0,0.0,0.0,0,1.8,0.0,0.0,0.0,0.0,0.0
+Yoane Wissa,Newcastle,FWD,6.0,4,4.0,4.0,90,1.8,0.94,0.02,0.96,0.96,0.6666666666666666
+William Osula,Newcastle,FWD,6.0,4,4.0,4.0,55,1.0,0.06,0.14,0.2,0.32727272727272727,0.6666666666666666
+Sean Neave,Newcastle,FWD,4.5,0,0.0,0.0,0,0.8,0.0,0.0,0.0,0.0,0.0
+Aladji Bamba,Newcastle,MID,5.0,1,1.0,1.0,14,0.1,0.0,0.0,0.0,0.0,0.2
+Lukás Hornícek,Newcastle,GK,5.0,1,1.0,1.0,90,0.7,0.0,0.0,0.0,0.0,0.2
+Amar Dedic,Newcastle,DEF,4.5,1,1.0,1.0,90,0.3,0.03,0.0,0.03,0.03,0.2222222222222222
+Matz Sels,Nott'm Forest,GK,5.0,2,2.0,2.0,90,1.6,0.0,0.0,0.0,0.0,0.4
+John Victor Maciel Furtado,Nott'm Forest,GK,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Neco Williams,Nott'm Forest,DEF,5.0,2,2.0,2.0,90,10.0,0.0,0.02,0.02,0.02,0.4
+Felipe Rodrigues da Silva,Nott'm Forest,DEF,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Nikola Milenković,Nott'm Forest,DEF,5.5,2,2.0,2.0,90,2.0,0.11,0.02,0.13,0.13,0.36363636363636365
+Murillo Costa dos Santos,Nott'm Forest,DEF,5.5,4,4.0,4.0,90,1.6,0.0,0.28,0.28,0.28,0.7272727272727273
+Ola Aina,Nott'm Forest,DEF,4.5,5,5.0,5.0,73,3.6,0.04,0.17,0.21,0.2589041095890411,1.1111111111111112
+Jair Paula da Cunha Filho,Nott'm Forest,DEF,4.5,1,1.0,1.0,90,0.2,0.0,0.0,0.0,0.0,0.2222222222222222
+Nicolò Savona,Nott'm Forest,DEF,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Omar Richards,Nott'm Forest,DEF,4.0,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Zach Abbott,Nott'm Forest,DEF,4.0,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Luca Netz,Nott'm Forest,DEF,4.5,1,1.0,1.0,16,0.0,0.0,0.0,0.0,0.0,0.2222222222222222
+Tyler Bindon,Nott'm Forest,DEF,4.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Morgan Gibbs-White,Nott'm Forest,MID,8.0,2,2.0,2.0,90,11.4,0.13,0.06,0.19,0.19000000000000003,0.25
+Callum Hudson-Odoi,Nott'm Forest,MID,6.0,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Dan Ndoye,Nott'm Forest,MID,5.5,3,3.0,3.0,61,0.4,0.0,0.0,0.0,0.0,0.5454545454545454
+Omari Hutchinson,Nott'm Forest,MID,5.5,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Dilane Bakwa,Nott'm Forest,MID,5.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+James McAtee,Nott'm Forest,MID,5.5,3,3.0,3.0,73,0.0,0.0,0.16,0.16,0.19726027397260273,0.5454545454545454
+Nicolás Domínguez,Nott'm Forest,MID,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Ibrahim Sangaré,Nott'm Forest,MID,5.0,2,2.0,2.0,90,1.1,0.03,0.01,0.04,0.04,0.4
+Ryan Yates,Nott'm Forest,MID,4.5,0,0.0,0.0,0,1.8,0.0,0.0,0.0,0.0,0.0
+Chris Wood,Nott'm Forest,FWD,6.0,1,1.0,1.0,28,1.8,0.12,0.01,0.13,0.41785714285714287,0.16666666666666666
+Igor Jesus Maciel da Cruz,Nott'm Forest,FWD,6.0,2,2.0,2.0,90,4.2,0.22,0.02,0.24,0.24,0.3333333333333333
+Arnaud Kalimuendo,Nott'm Forest,FWD,5.5,1,1.0,1.0,1,0.1,0.0,0.0,0.0,0.0,0.18181818181818182
+Xaver Schlager,Nott'm Forest,MID,5.0,1,1.0,1.0,16,0.1,0.0,0.0,0.0,0.0,0.2
+Ousmane Diomande,Nott'm Forest,DEF,5.5,0,0.0,0.0,0,0.8,0.0,0.0,0.0,0.0,0.0
+Steven Benda,Nott'm Forest,GK,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Jan Paul van Hecke,Spurs,DEF,5.0,1,1.0,1.0,90,10.6,0.0,0.03,0.03,0.03,0.2
+Sandro Tonali,Spurs,MID,5.5,2,2.0,2.0,90,4.2,0.04,0.06,0.1,0.1,0.36363636363636365
+Guglielmo Vicario,Spurs,GK,4.5,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Brandon Austin,Spurs,GK,4.0,0,0.0,0.0,0,0.9,0.0,0.0,0.0,0.0,0.0
+Antonín Kinský,Spurs,GK,4.5,2,2.0,2.0,90,23.9,0.0,0.0,0.0,0.0,0.4444444444444444
+Martin Dubravka,Spurs,GK,4.0,0,0.0,0.0,0,19.4,0.0,0.0,0.0,0.0,0.0
+Marcos Senesi Barón,Spurs,DEF,6.0,3,3.0,3.0,90,8.2,0.0,0.02,0.02,0.02,0.5
+Pedro Porro Sauceda,Spurs,DEF,5.5,0,0.0,0.0,0,15.5,0.0,0.0,0.0,0.0,0.0
+Cristian Romero,Spurs,DEF,5.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Kevin Danso,Spurs,DEF,5.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Andrew Robertson,Spurs,DEF,4.5,3,3.0,3.0,90,3.9,0.0,0.06,0.06,0.06,0.6666666666666666
+Micky van de Ven,Spurs,DEF,5.0,0,0.0,0.0,0,5.0,0.0,0.0,0.0,0.0,0.0
+Djed Spence,Spurs,DEF,4.5,0,0.0,0.0,0,0.7,0.0,0.0,0.0,0.0,0.0
+Destiny Udogie,Spurs,DEF,4.5,1,1.0,1.0,4,0.5,0.0,0.02,0.02,0.45,0.2222222222222222
+Ashley Phillips,Spurs,DEF,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Ben Davies,Spurs,DEF,4.0,0,0.0,0.0,0,1.1,0.0,0.0,0.0,0.0,0.0
+Jun'ai Byfield,Spurs,DEF,4.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+James Rowswell,Spurs,DEF,4.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+João Victor de Souza Menezes,Spurs,DEF,4.0,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Mohammed Kudus,Spurs,MID,6.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Xavi Simons,Spurs,MID,6.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Mathys Tel,Spurs,MID,6.0,2,2.0,2.0,90,0.6,0.06,0.06,0.12,0.12,0.3333333333333333
+James Maddison,Spurs,MID,6.5,1,1.0,1.0,22,1.4,0.0,0.01,0.01,0.04090909090909091,0.15384615384615385
+Rodrigo Bentancur,Spurs,MID,5.5,1,1.0,1.0,45,0.2,0.0,0.01,0.01,0.02,0.18181818181818182
+Wilson Odobert,Spurs,MID,5.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Pape Matar Sarr,Spurs,MID,5.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Conor Gallagher,Spurs,MID,5.5,0,0.0,0.0,45,0.3,0.02,0.06,0.08,0.16,0.0
+Lucas Bergvall,Spurs,MID,5.5,1,1.0,1.0,45,0.2,0.0,0.01,0.01,0.02,0.18181818181818182
+Dejan Kulusevski,Spurs,MID,6.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Archie Gray,Spurs,MID,5.0,2,2.0,2.0,85,0.2,0.0,0.01,0.01,0.010588235294117647,0.4
+Mikey Moore,Spurs,MID,5.0,2,2.0,2.0,67,0.2,0.38,0.02,0.4,0.5373134328358209,0.4
+Callum Olusesi,Spurs,MID,4.5,0,0.0,0.0,0,0.9,0.0,0.0,0.0,0.0,0.0
+Mateus Fernandes,Spurs,MID,6.0,1,1.0,1.0,45,1.9,0.0,0.06,0.06,0.12,0.16666666666666666
+Dominic Solanke-Mitchell,Spurs,FWD,6.0,1,1.0,1.0,22,1.4,0.07,0.0,0.07,0.2863636363636364,0.16666666666666666
+Richarlison de Andrade,Spurs,FWD,6.0,2,2.0,2.0,67,3.2,0.0,0.0,0.0,0.0,0.3333333333333333
+Dane Scarlett,Spurs,FWD,4.5,0,0.0,0.0,0,1.8,0.0,0.0,0.0,0.0,0.0
+Luca Williams-Barnett,Spurs,MID,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Robin Roefs,Sunderland,GK,5.0,1,1.0,1.0,90,4.3,0.0,0.0,0.0,0.0,0.2
+Anthony Patterson,Sunderland,GK,4.0,0,0.0,0.0,0,0.2,0.0,0.0,0.0,0.0,0.0
+Melker Ellborg,Sunderland,GK,4.5,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Daniel Ballard,Sunderland,DEF,5.0,0,0.0,0.0,90,5.6,0.0,0.01,0.01,0.01,0.0
+Nordi Mukiele,Sunderland,DEF,5.5,0,0.0,0.0,0,2.8,0.0,0.0,0.0,0.0,0.0
+Trai Hume,Sunderland,DEF,4.5,2,2.0,2.0,79,6.9,0.04,0.27,0.31,0.35316455696202537,0.4444444444444444
+Omar Alderete,Sunderland,DEF,5.0,1,1.0,1.0,23,0.5,0.0,0.01,0.01,0.0391304347826087,0.2
+Reinildo Mandava,Sunderland,DEF,4.5,1,1.0,1.0,90,0.5,0.0,0.29,0.29,0.29,0.2222222222222222
+Jenson Seelt,Sunderland,DEF,4.5,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Leo Fuhr Hjelde,Sunderland,DEF,4.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Luke O'Nien,Sunderland,DEF,4.0,1,1.0,1.0,66,3.7,0.01,0.01,0.02,0.02727272727272727,0.25
+Arthur Masuaku,Sunderland,DEF,4.0,0,0.0,0.0,0,0.3,0.0,0.0,0.0,0.0,0.0
+Thomas Meunier,Sunderland,DEF,4.5,1,1.0,1.0,90,0.3,0.08,0.08,0.16,0.16,0.2222222222222222
+Enzo Le Fée,Sunderland,MID,6.0,2,2.0,2.0,79,9.9,0.0,0.03,0.03,0.03417721518987342,0.3333333333333333
+Habib Diarra,Sunderland,MID,5.5,1,1.0,1.0,10,0.1,0.03,0.0,0.03,0.27,0.18181818181818182
+Granit Xhaka,Sunderland,MID,5.5,9,9.0,9.0,90,4.5,0.0,0.09,0.09,0.09,1.6363636363636365
+Noah Sadiki,Sunderland,MID,5.0,2,2.0,2.0,90,0.4,0.06,0.03,0.09,0.09,0.4
+Simon Adingra,Sunderland,MID,5.0,0,0.0,0.0,0,0.1,0.0,0.0,0.0,0.0,0.0
+Romaine Mundle,Sunderland,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Chris Rigg,Sunderland,MID,5.0,1,1.0,1.0,10,0.1,0.0,0.0,0.0,0.0,0.2
+Chemsdine Talbi,Sunderland,MID,5.5,1,1.0,1.0,31,0.2,0.0,0.0,0.0,0.0,0.18181818181818182
+Djiamgone Jocelin Ta Bi,Sunderland,MID,5.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Nilson Angulo,Sunderland,MID,5.0,5,5.0,5.0,58,0.1,0.15,0.01,0.16,0.24827586206896554,1.0
+Brian Brobbey,Sunderland,FWD,6.0,2,2.0,2.0,66,13.9,0.3,0.0,0.3,0.40909090909090906,0.3333333333333333
+Wilson Isidor,Sunderland,FWD,5.5,1,1.0,1.0,23,1.0,0.0,0.0,0.0,0.0,0.18181818181818182
