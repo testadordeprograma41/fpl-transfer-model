@@ -1,5 +1,12 @@
 import pandas as pd
 
+from modeling.features import (
+    LAG_SOURCE_COLUMNS,
+    ROLLING_SOURCE_COLUMNS,
+    ROLLING_WINDOWS,
+    TRAINING_COLUMNS,
+)
+
 
 INPUT_FILE = "data/historical/historical_gws.csv"
 OUTPUT_FILE = "data/processed/training_data.csv"
@@ -49,16 +56,7 @@ def create_features(df):
     )
 
     # What happened in the player's PREVIOUS fixture?
-    lag_columns = [
-        "minutes",
-        "total_points",
-        "expected_goals",
-        "expected_assists",
-        "expected_goal_involvements",
-        "starts",
-    ]
-
-    for column in lag_columns:
+    for column in LAG_SOURCE_COLUMNS:
         df[f"{column}_last"] = (
             player_group[column].shift(1)
         )
@@ -68,81 +66,23 @@ def create_features(df):
     # shift(1) is crucial:
     # when predicting GW10, GW10 itself must not be
     # included in the average.
-    rolling_columns = [
-        "minutes",
-        "total_points",
-        "expected_goals",
-        "expected_assists",
-        "expected_goal_involvements",
-    ]
-
-    for column in rolling_columns:
-
-        df[f"{column}_avg_3"] = (
-            player_group[column]
-            .transform(
-                lambda x:
-                    x.shift(1)
-                    .rolling(3, min_periods=1)
-                    .mean()
+    for column in ROLLING_SOURCE_COLUMNS:
+        for window in ROLLING_WINDOWS:
+            df[f"{column}_avg_{window}"] = (
+                player_group[column]
+                .transform(
+                    lambda x, window=window:
+                        x.shift(1)
+                        .rolling(window, min_periods=1)
+                        .mean()
+                )
             )
-        )
-
-        df[f"{column}_avg_5"] = (
-            player_group[column]
-            .transform(
-                lambda x:
-                    x.shift(1)
-                    .rolling(5, min_periods=1)
-                    .mean()
-            )
-        )
 
     return df
 
 
 def select_training_columns(df):
-    columns = [
-        # Identification
-        "season",
-        "GW",
-        "element",
-        "name",
-        "position",
-        "team",
-
-        # Information known for the upcoming fixture
-        "value",
-        "opponent_team",
-        "was_home",
-
-        # Previous fixture
-        "minutes_last",
-        "total_points_last",
-        "expected_goals_last",
-        "expected_assists_last",
-        "expected_goal_involvements_last",
-        "starts_last",
-
-        # Previous 3 fixtures
-        "minutes_avg_3",
-        "total_points_avg_3",
-        "expected_goals_avg_3",
-        "expected_assists_avg_3",
-        "expected_goal_involvements_avg_3",
-
-        # Previous 5 fixtures
-        "minutes_avg_5",
-        "total_points_avg_5",
-        "expected_goals_avg_5",
-        "expected_assists_avg_5",
-        "expected_goal_involvements_avg_5",
-
-        # TARGET
-        "total_points",
-    ]
-
-    return df[columns]
+    return df[TRAINING_COLUMNS]
 
 
 def main():

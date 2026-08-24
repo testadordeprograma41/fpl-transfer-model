@@ -1,13 +1,9 @@
-import pandas as pd
-from sklearn.metrics import mean_absolute_error, mean_squared_error
+from modeling.data import load_training_data, split_by_season
+from modeling.evaluate import calculate_metrics
 
 
-INPUT_FILE = "data/processed/training_data.csv"
-
-
-def calculate_metrics(actual, predicted, label):
-    mae = mean_absolute_error(actual, predicted)
-    rmse = mean_squared_error(actual, predicted) ** 0.5
+def print_row(actual, predicted, label):
+    mae, rmse = calculate_metrics(actual, predicted)
 
     print(
         f"{label:<30}"
@@ -17,9 +13,10 @@ def calculate_metrics(actual, predicted, label):
 
 
 def main():
-    df = pd.read_csv(INPUT_FILE)
+    df = load_training_data()
 
-    test = df[df["season"] == "2025-26"].copy()
+    _, test = split_by_season(df)
+    test = test.copy()
 
     print(f"Test rows: {len(test):,}")
     print()
@@ -55,25 +52,25 @@ def main():
     print("ALL PLAYERS")
     print("-" * 60)
 
-    calculate_metrics(
+    print_row(
         test["total_points"],
         test["pred_zero"],
         "Always predict 0"
     )
 
-    calculate_metrics(
+    print_row(
         test["total_points"],
         test["pred_last"],
         "Previous match"
     )
 
-    calculate_metrics(
+    print_row(
         test["total_points"],
         test["pred_avg_3"],
         "3-match average"
     )
 
-    calculate_metrics(
+    print_row(
         test["total_points"],
         test["pred_avg_5"],
         "5-match average"
@@ -100,25 +97,25 @@ def main():
     )
     print("-" * 60)
 
-    calculate_metrics(
+    print_row(
         likely_players["total_points"],
         likely_players["pred_zero"],
         "Always predict 0"
     )
 
-    calculate_metrics(
+    print_row(
         likely_players["total_points"],
         likely_players["pred_last"],
         "Previous match"
     )
 
-    calculate_metrics(
+    print_row(
         likely_players["total_points"],
         likely_players["pred_avg_3"],
         "3-match average"
     )
 
-    calculate_metrics(
+    print_row(
         likely_players["total_points"],
         likely_players["pred_avg_5"],
         "5-match average"

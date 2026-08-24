@@ -1,4 +1,5 @@
-from sklearn.linear_model import LinearRegression
+import pandas as pd
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.pipeline import Pipeline
 
 from modeling.data import (
@@ -19,7 +20,13 @@ def build_model():
             ),
             (
                 "regressor",
-                LinearRegression()
+                RandomForestRegressor(
+                    n_estimators=300,
+                    max_depth=10,
+                    min_samples_leaf=5,
+                    random_state=42,
+                    n_jobs=-1,
+                )
             ),
         ]
     )
@@ -117,6 +124,39 @@ def main():
             ]
         ]
         .head(20)
+        .to_string(index=False)
+    )
+
+    # Feature importances give a quick sanity check that the model
+    # is leaning on sensible signals (not noise).
+    print()
+    print("Top 15 feature importances:")
+
+    feature_names = (
+        model
+        .named_steps["preprocessor"]
+        .get_feature_names_out()
+    )
+
+    importances = (
+        model
+        .named_steps["regressor"]
+        .feature_importances_
+    )
+
+    importance_table = pd.DataFrame(
+        {
+            "feature": feature_names,
+            "importance": importances,
+        }
+    ).sort_values(
+        "importance",
+        ascending=False
+    )
+
+    print(
+        importance_table
+        .head(15)
         .to_string(index=False)
     )
 
