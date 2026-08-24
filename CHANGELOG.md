@@ -8,6 +8,59 @@ Each entry should include: date, files changed, what changed, and why.
 
 ## [Unreleased]
 
+## 2026-08-24 (4)
+
+**Files changed:**
+- src/fetch_fixtures.py
+
+**What changed:**
+Replaced the hardcoded `CURRENT_SEASON = "2025-26"` constant in `verify_team_id_mapping()` with a new `infer_current_season()` helper, which derives the season string directly from the fetched fixtures' own kickoff dates (a Jul-Dec kickoff belongs to the season starting that calendar year; Jan-Jun belongs to the season that started the previous year). `verify_team_id_mapping()` now looks up `training_data.csv` rows for that inferred season instead of the hardcoded one.
+
+**Why:**
+Running `fetch_fixtures.py` today showed `CURRENT_SEASON = "2025-26"` had gone stale: the fetched fixtures are actually 2026-27 season fixtures (new promoted teams -- Coventry City, Hull City, Ipswich Town -- confirm this), but the hardcoded constant still pointed at last season. All 380 fetched fixtures currently show `finished == False`, so today's run happened to fail safely (0 fixture-sides to check -> the existing "unverified" message). But this was about to become an active correctness bug, not just a cosmetic one: once real 2026-27 fixtures start finishing, the old code would have cross-checked them against **2025-26's different fixtures** for the same team+GW number -- and per this file's own docstring, team ids are not guaranteed stable across a promotion/relegation season boundary. That would have produced spurious pass/fail verdicts that say nothing real about whether *this season's* id<->name mapping is correct, defeating the point of the check.
+
+**Data-leakage / correctness note (per CLAUDE.md -- flagging as instructed):** This touches the mapping-verification logic flagged as a known area of concern in the `fetch_fixtures.py (new)` entry above. The fix doesn't change any feature-construction or leakage-prevention code in `modeling/` -- it only corrects which season's rows the cross-check compares `fixtures.csv` against. Verified without hitting the network: `infer_current_season()` correctly returns `"2026-27"` for the real fetched fixtures' Aug 2026 kickoff dates, and correctly handles the Jan-Jun season-boundary case against synthetic Jan/May 2027 dates. The user then re-ran the script end-to-end against the live API: it now prints `"(no 2026-27 rows in training_data.csv yet -- skipping team id/name cross-check...)"` instead of the old, less accurate `"could not find any matching played fixtures"` message.
+
+**Still unresolved -- flagging, not fixing here:** The team id<->name mapping for 2026-27 is still NOT verified against real data (`training_data.csv` has no 2026-27 rows to check against yet, since nothing in this project ingests live in-season results). This fix only stops the cross-check from silently comparing against the *wrong* season once 2026-27 games start finishing -- it doesn't add real verification. Per discussion with the user, we're proceeding to build on top of the unverified `bootstrap-static` mapping for now (it's FPL's own official API, judged low risk) rather than blocking on adding a live-results-ingestion step first.
+
+## 2026-08-24 (3)
+
+**Files changed:**
+- src/fetch_fixtures.py (new)
+
+**What changed:**
+Added `fetch_fixtures.py`, which fetches upcoming fixtures from the FPL API (`bootstrap-static` for team id<->name, `fixtures` for the schedule), saves them to `data/raw/fixtures.csv`, and prints the next unplayed gameweek's matchups.
+
+**Why:** `predict.py` (previous entry) can currently only reuse a player's *last played* fixture's opponent/was_home, because nothing in this project fetches upcoming fixtures -- this closes that gap, as a step toward real next-gameweek predictions and eventually a transfer recommender.
+
+**Data-leakage / correctness note (per CLAUDE.md -- important, please read):** `opponent_team` in `training_data.csv` is the FPL API's raw, per-season numeric team id (1-20), not a name -- and that id assignment is NOT simply alphabetical. I tested the "alphabetical" hypothesis offline against your real `training_data.csv` (assign id 1..20 to the 2025-26 teams in alphabetical order, then check whether that's internally consistent with the `opponent_team` ids already recorded) and it failed on 197 of 740 fixture-sides checked -- i.e. a plausible-looking guess would have been wrong roughly 27% of the time. Getting this mapping wrong would silently produce bad predictions (`OneHotEncoder(handle_unknown="ignore")` just zeroes out an unrecognised id instead of erroring), which matters more here than elsewhere in this project since it would eventually feed transfer advice.
+
+Because of that, `fetch_fixtures.py` does NOT guess -- it fetches the real id<->name mapping from the live `bootstrap-static` endpoint, and then cross-checks it against already-played 2025-26 fixtures in `training_data.csv` before printing OK or a WARNING. The cross-check logic itself (`verify_team_id_mapping`) was unit-tested with synthetic data to confirm it correctly flags mismatches and passes correct mappings.
+
+**Not yet verified against the live API:** this environment has no network access to fantasy.premierleague.com, so I could not run this script end-to-end the way I ran and verified everything else this session. It follows the same request/parse pattern as the already-working `fetch_fpl_data.py`, but please run it and check for "Team id<->name mapping verified... OK" in the output before I build anything (real predict.py wiring, a recommender) on top of its output.
+
+
+## 2026-08-24 (2)
+
+**Files changed:**
+- src/modeling/data.py
+- src/train_random_forest.py
+- src/predict.py (new)
+- models/.gitkeep (new)
+- .gitignore
+
+**What changed:**
+`train_random_forest.py` now uses the hyperparameters found by `compare_models.py`'s tuning run (`n_estimators=300, max_depth=15, min_samples_leaf=5, max_features='log2'`, replacing the earlier untuned guess) and, after the usual train/test evaluation, refits on the *entire* dataset (train + test seasons) and saves that fitted pipeline to `models/random_forest.joblib` via `joblib.dump`. Added `MODEL_DIR`/`MODEL_FILE` path constants to `modeling/data.py` so the save location is defined once. Added `src/predict.py`, a small reusable `load_model()` / `predict(model, df)` inference entrypoint intended for downstream use (e.g. a future transfer recommender). `.gitignore` now excludes `models/*.joblib` (the trained binary is a generated artifact, same treatment as the existing `data/*/​*.csv` rules); `models/.gitkeep` keeps the empty directory tracked in git the same way `data/processed/.gitkeep` already does.
+
+**Why:**
+Every training script so far retrained from scratch every time it ran, with no way to reuse a fitted model. This makes the tuned random forest a persisted artifact that can be loaded once and reused, which is a prerequisite for building an actual transfer recommender on top of it later.
+
+**Important limitation, called out in `predict.py`'s docstring:** `predict.py`'s demo predicts using each player's most recent *played* fixture (their last known opponent/was_home/value), not a real upcoming gameweek — there's no `fetch_fixtures.py` yet to supply the next fixture's opponent/home-away for each player. The demo exists to sanity-check that the saved model loads and predicts sensibly (verified: the top of the list is recognisable, currently-in-form players like Bruno Fernandes and Ollie Watkins), not to produce real transfer advice yet.
+
+**Data-leakage note (per CLAUDE.md):** The saved *production* model is deliberately fit on the 2025-26 test season too (not just train) — this is fine because the test-season MAE/RMSE numbers used to judge the model were already computed beforehand, from a model fit ONLY on train. Once that honest estimate exists, refitting on all available data before saving is standard practice (more data → a better model for real future predictions) and isn't circular, since no future information leaks backward into any feature (`shift(1)` in `build_training_data.py` is unchanged).
+
+**Not yet committed:** `models/random_forest.joblib` itself isn't included in this delivery — it's gitignored, and at ~58MB is also too large for the file-sync tool that writes files onto your machine. Run `python src/train_random_forest.py` from the project root after pulling these changes to generate your own local copy.
+
 ## 2026-08-24
 
 **Files changed:**
