@@ -5,6 +5,19 @@ import pandas as pd
 
 INPUT_FILE = Path("data/processed/training_data.csv")
 
+# Where the trained production model is saved/loaded from. Shared here (not
+# just in train_random_forest.py) so predict.py -- or anything else that
+# needs the fitted model -- points at the same file.
+MODEL_DIR = Path("models")
+MODEL_FILE = MODEL_DIR / "random_forest.joblib"
+
+# Live next-Gameweek inference inputs/outputs, shared between
+# build_live_features.py (writes LIVE_FEATURES_FILE) and predict.py (reads
+# LIVE_FEATURES_FILE, writes NEXT_GW_PREDICTIONS_FILE) so both point at the
+# same paths.
+LIVE_FEATURES_FILE = Path("data/processed/live_features.csv")
+NEXT_GW_PREDICTIONS_FILE = Path("data/processed/next_gw_predictions.csv")
+
 
 def load_training_data():
     return pd.read_csv(INPUT_FILE)

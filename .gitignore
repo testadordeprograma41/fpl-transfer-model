@@ -1,5 +1,6 @@
-.venv/ 
-__pycache__/ 
-*.pyc 
+.venv/
+__pycache__/
+*.pyc
 data/historical/*.csv
 data/processed/*.csv
+models/*.joblib

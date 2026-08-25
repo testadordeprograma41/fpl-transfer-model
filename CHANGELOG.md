@@ -8,6 +8,28 @@ Each entry should include: date, files changed, what changed, and why.
 
 ## [Unreleased]
 
+## 2026-08-25
+
+**Files changed:**
+- src/build_live_features.py (new)
+- src/predict.py
+- src/modeling/data.py
+
+**What changed:**
+Added `build_live_features.py`, which builds one row per live player for the next unplayed 2026-27 Gameweek (610 players for GW1). It fetches current `bootstrap-static` data plus `data/raw/fixtures.csv`, computes the same lag/rolling features used in training (`minutes_last`, `total_points_last`, `expected_goals_last`, `expected_assists_last`, `expected_goal_involvements_last`, `starts_last`, plus 3- and 5-match rolling averages) from each player's most recent PAST matches in `data/historical/` (any season, matched by player name since FPL's numeric element ids aren't stable across seasons), and joins each player's real upcoming `opponent_team`/`was_home`/`value` from `fixtures.csv`. Saves `data/processed/live_features.csv` containing every `modeling.features.FEATURE_COLUMNS` entry plus display/identification columns (name, team, position, price, opponent name, kickoff time, match count on record). Validates and reports (without silently failing): missing `FEATURE_COLUMNS`, players with no next-GW fixture, players with zero match history, and teams unseen in `training_data.csv`. Added `LIVE_FEATURES_FILE`/`NEXT_GW_PREDICTIONS_FILE` path constants to `modeling/data.py`, matching the existing `MODEL_FILE` constant pattern. Rewrote `predict.py`'s `main()` to load `live_features.csv` and produce `data/processed/next_gw_predictions.csv` (name/team/position/price/opponent/home_away/predicted_points), fully replacing the old "reuse each player's last played fixture" demo.
+
+**Why:**
+This closes the gap flagged in `predict.py`'s previous docstring and in the `fetch_fixtures.py` entry above: the project could fetch upcoming fixtures but had no way to actually turn them into real prediction inputs. This is the first genuinely forward-looking (not retrospective) prediction this model has produced.
+
+**Data-leakage / correctness notes (per CLAUDE.md -- flagging as instructed):**
+1. `build_live_features.py` deliberately computes lag/rolling features ACROSS season boundaries (grouped by player name only, sorted by season+GW), unlike `build_training_data.py`'s per-`(season, element)` grouping. This is necessary: under the training-time rule, every player's first match of a season has no lag features and is dropped outright (`dropna(subset=["minutes_last"])`) -- applied to a live GW1 prediction, that rule would leave every single player with empty features and nothing to predict. Only past, already-played matches are ever read (`data/historical/*.csv`) -- nothing about the unplayed upcoming fixture feeds into a lag/rolling feature, so the no-future-leakage property build_training_data.py's `shift(1)` was written to guarantee is preserved, just applied across a season boundary instead of within one. This does mean GW1-shaped feature vectors were never present in `training_data.csv` (they're dropped there) -- so this is inherently a slightly out-of-distribution input for the model, which is flagged in `build_live_features.py`'s module docstring rather than hidden.
+2. Players with zero prior Premier League history (113 of 610 for the real 2026-27 GW1 run) get NaN lag/rolling features, left for the model's existing `SimpleImputer(strategy="median")` to handle -- the same treatment as any other missing value, not a new code path.
+3. **Known limitation, NOT fixed here:** `team`/`opponent_team` are one-hot encoded against whatever categories appeared in `training_data.csv` (2023-24/2024-25/2025-26 pooled). Coventry City, Hull City, and Ipswich Town never appear there, so their players' `team` feature is silently zeroed by `OneHotEncoder(handle_unknown="ignore")`, and `opponent_team` (a raw per-season numeric id, already flagged as unstable across seasons in the `fetch_fixtures.py` entry above) may silently collide with an unrelated team's id from a past season for ANY team, promoted or not. `build_live_features.py` reports which teams are unseen in training data at runtime so affected players are visible; redesigning the categorical encoding itself would be a feature-construction change out of scope for this task and needs its own sign-off first.
+
+**Verification:** Ran `build_live_features.py` against the live FPL API: 610 players fetched for GW1 2026-27, 0 players without a fixture, 113 without match history, the 3 promoted teams correctly flagged as unseen in training data. Ran `train_random_forest.py` to regenerate the local (gitignored) model -- MAE 0.961 on the 2025-26 hold-out, matching the number already recorded in this CHANGELOG, confirming the retrain reproduced the same model. Ran `predict.py` against the real model and real `live_features.csv`: loaded without error, all `FEATURE_COLUMNS` present, produced `next_gw_predictions.csv` with a plausible top 20 (recognisable in-form players -- Bruno Fernandes, Szoboszlai, Watkins, Cole Palmer, Virgil van Dijk, etc. -- at reasonable predicted-points values, with correct GW1 opponents and home/away).
+
+**Not yet built (explicitly out of scope for this task):** the transfer optimizer. This only produces single-Gameweek point predictions.
+
 ## 2026-08-24 (4)
 
 **Files changed:**
