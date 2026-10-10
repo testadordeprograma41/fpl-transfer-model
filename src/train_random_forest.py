@@ -104,7 +104,7 @@ def main():
             "GW",
             "name",
             "position",
-            "team",
+            "team_name",
             "total_points",
         ]
     ].copy()

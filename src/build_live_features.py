@@ -29,14 +29,14 @@ Gameweek".
 Instead, this script computes each player's lag/rolling features from
 their most recent PAST matches regardless of season, matched by player
 NAME rather than FPL's numeric "element" id (element ids are NOT stable
-across seasons -- same reasoning already documented in fetch_fixtures.py
-for team ids). A player's most recent known form genuinely IS their last
-2025-26 match if they have not played a 2026-27 match yet. This only ever
-reads matches that have already been played (data/historical/*.csv) --
-nothing about the upcoming, unplayed fixture is used to build lag/rolling
-features, so this preserves the no-future-data-leakage property
-build_training_data.py's shift(1) was written to guarantee, just applied
-across a season boundary instead of within one.
+across seasons -- same reasoning as team ids, see below). A player's most
+recent known form genuinely IS their last 2025-26 match if they have not
+played a 2026-27 match yet. This only ever reads matches that have
+already been played (data/historical/*.csv) -- nothing about the
+upcoming, unplayed fixture is used to build lag/rolling features, so this
+preserves the no-future-data-leakage property build_training_data.py's
+shift(1) was written to guarantee, just applied across a season boundary
+instead of within one.
 
 Players with NO historical match at all (e.g. genuinely new to the
 Premier League, or on a newly-promoted team with no top-flight history in
@@ -47,6 +47,29 @@ here on purpose -- the model's existing preprocessing pipeline
 reason, so an "insufficient history" player is handled the same way any
 other missing value already is, not silently guessed at by this script.
 
+TEAM/OPPONENT REPRESENTATION (fixed 2026-08-25, see CHANGELOG.md):
+"team_name" and "opponent_name" are the player's own club and their next
+opponent's club, BY NAME -- both come straight from this season's live
+bootstrap-static "teams" table via fetch_json(BOOTSTRAP_URL), which is
+the single authoritative source for what a numeric id means THIS season.
+This project previously fed the model FPL's raw numeric opponent_team id
+directly. That id is NOT a stable category across seasons (confirmed
+empirically -- see build_training_data.py's
+build_season_team_name_maps(), which found e.g. id 3 was Bournemouth in
+2023-24/2024-25 but Burnley in 2025-26 within this project's own training
+data), so training_data.csv and modeling/features.py now use team_name/
+opponent_name throughout instead. The raw numeric ids are still carried
+in this file as "team_id"/"opponent_team_id" for reference/debugging, but
+are NOT model features.
+
+A genuinely new club (Coventry City, Hull City, Ipswich Town this season)
+is still, correctly, an unseen category to the trained
+OneHotEncoder(handle_unknown="ignore") -- there is no training history
+for a club that's never been in the Premier League before, and zeroing
+that feature rather than guessing is the right behaviour. What's fixed is
+that an EXISTING club's numeric id can no longer be silently mistaken for
+a different club that happened to hold the same id in a past season.
+
 KNOWN LIMITATIONS (flagged per CLAUDE.md, not fixed here -- out of scope
 for "produce real predictions with the existing pipeline"):
 
@@ -56,21 +79,7 @@ for "produce real predictions with the existing pipeline"):
    row shaped like "first match of the season" -- treat these predictions
    as the best available forward-looking estimate, not a guarantee of the
    MAE/RMSE numbers in CHANGELOG.md, which were measured on GW2+ rows.
-2. "team" and "opponent_team" are both categorical features one-hot
-   encoded against whatever categories appeared in training_data.csv
-   (2023-24 + 2024-25 + 2025-26, pooled). A team that never appears in
-   that pooled set (e.g. a newly-promoted team) is an unseen category:
-   OneHotEncoder(handle_unknown="ignore") silently zeroes out the "team"
-   feature for its players rather than erroring. Separately,
-   "opponent_team" is FPL's raw numeric per-season id, which is already
-   documented (fetch_fixtures.py) as NOT stable across seasons -- so even
-   for a team that DID appear before, this season's id for it may
-   silently collide with a different team's id from a past season. This
-   script reports which live teams are unseen in training data so you can
-   see the affected players, but does not change how the feature is
-   encoded -- that would be a feature-construction change and needs its
-   own sign-off, not a side effect of building live inputs.
-3. Assumes exactly one fixture per team in the next Gameweek (true for a
+2. Assumes exactly one fixture per team in the next Gameweek (true for a
    normal, non-blank/non-double Gameweek; GW1 always qualifies). Not
    handled: blank/double Gameweeks later in the season.
 """
@@ -99,8 +108,9 @@ POSITION_MAP = {1: "GK", 2: "DEF", 3: "MID", 4: "FWD"}
 
 # Columns carried through to live_features.csv beyond what FEATURE_COLUMNS
 # strictly requires -- needed for predict.py's next_gw_predictions.csv
-# (player name, price display, opponent name, etc.) and for spot-checking
-# this file by eye.
+# (player name, price display, etc.), and "team_id"/"opponent_team_id"
+# are kept purely for reference/debugging (NOT model features -- see
+# module docstring).
 IDENTIFICATION_OUTPUT_COLUMNS = [
     "id",
     "code",
@@ -108,7 +118,8 @@ IDENTIFICATION_OUTPUT_COLUMNS = [
     "web_name",
     "GW",
     "kickoff_time",
-    "opponent_name",
+    "team_id",
+    "opponent_team_id",
     "matches_on_record",
 ]
 
@@ -120,7 +131,12 @@ def fetch_json(url):
 
 
 def load_live_players(bootstrap):
-    """Every current player, with position/team names and current price.
+    """Every current player, with position/team name and current price.
+
+    "team_id" is FPL's raw numeric id for the player's own club THIS
+    season, kept for reference only. "team_name" (derived from the same
+    bootstrap-static "teams" table) is the actual model feature -- see
+    module docstring for why the numeric id isn't used directly anymore.
 
     "value" is now_cost straight from the API (tenths of a million, e.g.
     45 = GBP4.5m) -- the SAME scale as training_data.csv's "value" column
@@ -133,13 +149,17 @@ def load_live_players(bootstrap):
 
     team_map = teams.set_index("id")["name"].to_dict()
 
-    players["team"] = players["team"].map(team_map)
+    players["team_id"] = players["team"]
+    players["team_name"] = players["team"].map(team_map)
     players["position"] = players["element_type"].map(POSITION_MAP)
     players["name"] = players["first_name"] + " " + players["second_name"]
     players["value"] = players["now_cost"]
 
     return players[
-        ["id", "code", "name", "web_name", "team", "position", "value"]
+        [
+            "id", "code", "name", "web_name",
+            "team_id", "team_name", "position", "value",
+        ]
     ].copy()
 
 
@@ -184,16 +204,22 @@ def load_next_gw_fixtures():
 
 
 def build_next_fixture_lookup(next_gw_fixtures):
-    """One row per (team, upcoming opponent id/name, was_home) for the
-    next Gameweek -- every player on a team shares that team's fixture.
+    """One row per (team_name, upcoming opponent_name/opponent_team_id,
+    was_home) for the next Gameweek -- every player on a team shares that
+    team's fixture.
+
+    team_h_name/team_a_name/team_h/team_a in fixtures.csv all come from
+    THIS season's live bootstrap-static "teams" table (see
+    fetch_fixtures.py) -- the same authoritative source used for
+    team_name in load_live_players(), so names line up by construction.
     """
 
     home_side = next_gw_fixtures[
         ["team_h_name", "team_a", "team_a_name", "kickoff_time"]
     ].rename(
         columns={
-            "team_h_name": "team",
-            "team_a": "opponent_team",
+            "team_h_name": "team_name",
+            "team_a": "opponent_team_id",
             "team_a_name": "opponent_name",
         }
     )
@@ -203,8 +229,8 @@ def build_next_fixture_lookup(next_gw_fixtures):
         ["team_a_name", "team_h", "team_h_name", "kickoff_time"]
     ].rename(
         columns={
-            "team_a_name": "team",
-            "team_h": "opponent_team",
+            "team_a_name": "team_name",
+            "team_h": "opponent_team_id",
             "team_h_name": "opponent_name",
         }
     )
@@ -215,7 +241,7 @@ def build_next_fixture_lookup(next_gw_fixtures):
     # If a blank/double Gameweek slipped through, keep only the first
     # fixture per team rather than silently duplicating that team's
     # players into two rows each.
-    return lookup.drop_duplicates(subset=["team"], keep="first")
+    return lookup.drop_duplicates(subset=["team_name"], keep="first")
 
 
 def load_player_history():
@@ -232,7 +258,7 @@ def load_player_history():
             f"first."
         )
 
-    history = pd.read_csv(HISTORICAL_FILE)
+    history = pd.read_csv(HISTORICAL_FILE, low_memory=False)
 
     numeric_columns = sorted(set(LAG_SOURCE_COLUMNS) | set(ROLLING_SOURCE_COLUMNS))
     for column in numeric_columns:
@@ -272,7 +298,7 @@ def compute_player_form(history):
 
 def assemble_live_dataset(live_players, fixture_lookup, form):
     live = live_players.merge(form, on="name", how="left")
-    live = live.merge(fixture_lookup, on="team", how="left")
+    live = live.merge(fixture_lookup, on="team_name", how="left")
 
     live["matches_on_record"] = live["matches_on_record"].fillna(0)
 
@@ -296,7 +322,7 @@ def validate(live, next_gw, known_teams):
     else:
         print(f"All {len(FEATURE_COLUMNS)} FEATURE_COLUMNS present. OK.")
 
-    no_fixture = live[live["opponent_team"].isna()]
+    no_fixture = live[live["opponent_name"].isna()]
     print()
     if len(no_fixture):
         print(
@@ -305,14 +331,14 @@ def validate(live, next_gw, known_teams):
             f"Gameweek) -- they will be EXCLUDED from live_features.csv:"
         )
         print(
-            no_fixture[["name", "team"]]
+            no_fixture[["name", "team_name"]]
             .drop_duplicates()
             .to_string(index=False)
         )
     else:
         print(f"All players matched to a GW{next_gw} fixture. OK.")
 
-    has_fixture = live[live["opponent_team"].notna()]
+    has_fixture = live[live["opponent_name"].notna()]
     no_history = has_fixture[has_fixture["matches_on_record"] == 0]
     print()
     print(
@@ -324,18 +350,20 @@ def validate(live, next_gw, known_teams):
         f"expect these predictions to be the least reliable in the file."
     )
 
-    unseen_teams = sorted(set(has_fixture["team"].dropna()) - known_teams)
+    unseen_teams = sorted(set(has_fixture["team_name"].dropna()) - known_teams)
     if unseen_teams:
         print()
         print(
-            f"NOTE (known limitation -- see module docstring / "
-            f"CHANGELOG, not fixed here): {len(unseen_teams)} team(s) "
-            f"never appear in training_data.csv: {unseen_teams}. Their "
-            f"players' 'team' feature will be silently zeroed by the "
-            f"trained OneHotEncoder, and matches against these teams' "
-            f"'opponent_team' id may silently collide with an unrelated "
-            f"team from a past season. Treat predictions for, and "
-            f"against, {unseen_teams} with extra caution."
+            f"NOTE: {len(unseen_teams)} team(s) never appear in "
+            f"training_data.csv: {unseen_teams}. This IS expected and "
+            f"acceptable for a genuinely new-to-the-top-flight club -- "
+            f"their 'team_name' feature is correctly treated as an "
+            f"unseen category by OneHotEncoder(handle_unknown='ignore') "
+            f"rather than guessed at. This is no longer the numeric-id "
+            f"collision risk flagged before 2026-08-25 (see CHANGELOG.md) "
+            f"-- an unseen NAME cannot silently be mistaken for a "
+            f"different, unrelated club the way a reused numeric id "
+            f"could."
         )
 
     return missing_columns, no_fixture, no_history, unseen_teams
@@ -366,10 +394,11 @@ def main():
             f"drifted out of sync -- fix the mismatch before predicting."
         )
 
-    live = live[live["opponent_team"].notna()].copy()
+    live = live[live["opponent_name"].notna()].copy()
 
     live["GW"] = next_gw
-    live["opponent_team"] = live["opponent_team"].astype(int)
+    live["team_id"] = live["team_id"].astype(int)
+    live["opponent_team_id"] = live["opponent_team_id"].astype(int)
     live["matches_on_record"] = live["matches_on_record"].astype(int)
 
     output_columns = IDENTIFICATION_OUTPUT_COLUMNS + [

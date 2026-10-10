@@ -85,7 +85,7 @@ def build_predictions_table(model, live):
     output = live[
         [
             "name",
-            "team",
+            "team_name",
             "position",
             "value",
             "opponent_name",
@@ -94,6 +94,7 @@ def build_predictions_table(model, live):
         ]
     ].rename(
         columns={
+            "team_name": "team",
             "value": "price",
             "opponent_name": "opponent",
             "was_home": "home_away",

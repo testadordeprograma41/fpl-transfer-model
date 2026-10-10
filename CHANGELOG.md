@@ -8,6 +8,46 @@ Each entry should include: date, files changed, what changed, and why.
 
 ## [Unreleased]
 
+## 2026-08-25 (2)
+
+**Files changed:**
+- src/modeling/features.py
+- src/build_training_data.py
+- src/build_live_features.py
+- src/predict.py
+- src/train_random_forest.py
+- src/fetch_fixtures.py
+- data/processed/training_data.csv (regenerated)
+- models/random_forest.joblib (regenerated, gitignored)
+
+**What changed:**
+Replaced FPL's raw, per-season numeric `opponent_team` id with a stable `opponent_name` (and renamed the already-name-based `team` to `team_name`, for a consistent, unambiguous pair) as the model's categorical team features, everywhere: `modeling/features.py` (`IDENTIFICATION_COLUMNS`, `FIXTURE_KNOWN_COLUMNS`, `CATEGORICAL_FEATURES`), `build_training_data.py` (new `build_season_team_name_maps()` + `add_stable_team_names()`), `build_live_features.py` (live players' own team and next opponent are now both read from this season's bootstrap-static team names, kept in `team_id`/`opponent_team_id` only as non-feature reference columns), `predict.py`, and `train_random_forest.py`'s sample-predictions display. Regenerated `training_data.csv` and retrained/resaved the production model with the existing tuned hyperparameters (unchanged: `n_estimators=300, max_depth=15, min_samples_leaf=5, max_features='log2'`).
+
+`build_training_data.py`'s new `build_season_team_name_maps()` derives each season's `{numeric id: team name}` mapping directly from `data/historical/historical_gws.csv` itself -- no external reference file, no guessing. Every played fixture pairs exactly two teams, and one side's already-name-based `team` column paired with the OTHER side's numeric `opponent_team` id (grouped by `(season, fixture)`) hands us both directions of the mapping directly from data the model was already trained on.
+
+Also updated `fetch_fixtures.py`: its `verify_team_id_mapping()` cross-check existed only because the model used to consume `training_data.csv`'s numeric `opponent_team` column directly -- with that column gone (replaced by `opponent_name`), the check would raise a `KeyError` and, more fundamentally, had nothing left to verify (there's no id<->name mapping for the model to get wrong anymore). Removed it and `infer_current_season()` (now unused), replaced with a much smaller `report_unseen_team_names()` that's purely informational: which of this fetch's team names have never appeared in `training_data.csv` (e.g. a promoted club) -- not a correctness gate.
+
+**Why:**
+`opponent_team` is FPL's raw, per-season numeric team id, and that id is NOT the same category across seasons. Confirmed empirically by `build_season_team_name_maps()` against this project's own historical data: id `3` was Bournemouth in both 2023-24 and 2024-25, but Burnley in 2025-26; id `11` was Liverpool, then Leicester, then Leeds across the same three seasons. `training_data.csv` pooled all three seasons together and one-hot encoded `opponent_team` as if id `3` meant one consistent club throughout -- silently teaching the model that unrelated clubs were the same opponent, and (per the fetch_fixtures.py entries earlier in this file) putting live 2026-27 predictions at risk of the SAME numeric id silently pointing at the wrong club. Team names don't have this problem: a club keeps its name across seasons regardless of which numeric id the API assigns it that year.
+
+**Data-leakage / correctness notes (per CLAUDE.md -- flagging as instructed):**
+1. **Leakage protections preserved, verified not just asserted:** `create_features()`'s `shift(1)`/rolling logic, `split_by_season()`'s chronological train/test split, and `modeling/cv.py`'s `TimeSeriesSplit` were NOT touched by this change. Verified directly: the regenerated `training_data.csv` has the exact same shape (84,577 rows x 26 columns) as before, and all 24 columns unrelated to team/opponent are byte-identical to the pre-change file, row for row. The only columns that changed are the renamed/re-derived `team_name`/`opponent_name` themselves.
+2. **New mapping verified two ways, not assumed correct:** (a) zero fixture-pairing problems found across all 3 seasons x 380 fixtures each (every fixture cleanly resolved to exactly two sides, no id/name conflicts within a season); (b) independently cross-checked every one of the 84,577 regenerated rows' new `opponent_name` against what the OLD numeric `opponent_team` id resolves to via the same derived per-season map -- 84,577/84,577 matched.
+3. **Unseen-category behavior is now correctly scoped:** a genuinely new club (Coventry City, Hull City, Ipswich Town this season -- still 3 teams, same as before this change) is still, correctly, an unseen category to `OneHotEncoder(handle_unknown="ignore")` -- there's no history for a club that's never been in the Premier League, and zeroing that feature rather than guessing is right. What's fixed is that an EXISTING club's numeric id can no longer be silently mistaken for a different club that happened to hold the same id in a past season.
+4. **Not assumed better just because it's more correct (per instruction):** retrained with unchanged hyperparameters and compared against the recorded 2025-26 hold-out benchmark rather than assuming an improvement:
+   - Old (numeric `opponent_team`): MAE 0.961, RMSE 1.925-1.926
+   - New (`team_name`/`opponent_name`): MAE 0.958, RMSE 1.926
+   Essentially a wash, with a small, plausible improvement in MAE (cleaner, non-conflated categories for returning clubs) and RMSE flat. Not a dramatic change -- expected, since `team_name`/`opponent_name` replace only one categorical feature's semantics among several, and most of the model's signal comes from the numeric form features (see feature-importance printout).
+
+**Verification:** Ran the full pipeline end-to-end: `build_training_data.py` (0 fixture-pairing problems, 100% opponent_name match against the old mapping, identical row/column counts otherwise), `train_random_forest.py` (metrics above, saved production model), and a `build_live_features.py` + `predict.py` dry run using already-fetched `data/raw/fixtures.csv` and `data/raw/players.csv` (network access to the live FPL API isn't available from this side) -- all 21 `FEATURE_COLUMNS` present, 606 players matched to GW1 fixtures, 112 with no history (unchanged from before, expected), 3 teams correctly flagged as unseen, and `next_gw_predictions.csv`'s top 20 shows correct, sensible GW1 opponents by name (e.g. all three Man Utd players correctly show `Hull City` as their opponent) with no obvious mapping problems. **The user still needs to re-run this same sequence on their own machine against the live API and real model file for final confirmation**, matching the pattern from the previous session.
+
+**New limitations discovered:**
+- Removing `fetch_fixtures.py`'s numeric-id cross-check was not on the original file list for this task, but was an unavoidable consequence of removing `opponent_team` from `training_data.csv` (the old check would otherwise crash with `KeyError`) -- flagging this explicitly since it's an incidental scope expansion, not requested directly.
+- `build_season_team_name_maps()`'s fixture-pairing derivation depends on `historical_gws.csv`'s `fixture`/`team`/`opponent_team` columns being internally consistent per season (clean for all 3 seasons currently in this project) -- if a future season's data has a postponed/voided/data-quality-issue fixture, `build_training_data.py` now reports it as a "problem" rather than silently mismapping, but this hasn't been tested against real messy data.
+- Pre-existing, unchanged by this fix: GW1-of-a-season feature vectors were still never present in training (see the 2026-08-25 (1) entry above); promoted-team players still get zero match history.
+
+**Not yet built (explicitly out of scope for this task):** multi-Gameweek expected-points forecasting and the transfer optimizer.
+
 ## 2026-08-25
 
 **Files changed:**

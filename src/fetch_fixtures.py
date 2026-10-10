@@ -5,15 +5,25 @@ now predict.py can only reuse a player's LAST PLAYED fixture's
 opponent/was_home, because nothing in this project fetches upcoming
 fixtures. This script closes that gap.
 
-IMPORTANT: modeling/features.py's `opponent_team` is the FPL API's raw,
-per-season numeric team id (1-20) -- NOT a name, and NOT necessarily stable
-across seasons (a promoted/relegated season can shuffle which club gets
-which id). Getting the id<->name mapping wrong here would silently corrupt
-future predictions -- OneHotEncoder(handle_unknown="ignore") just zeroes
-out an unrecognised id rather than raising an error. So this script
-cross-checks the mapping it fetches against already-played fixtures in
-data/processed/training_data.csv (which the model was trained on) before
-you should trust its output for anything downstream.
+TEAM NAMES, NOT NUMERIC IDS (updated 2026-08-25, see CHANGELOG.md): this
+project used to feed the model FPL's raw, per-season numeric team id
+(1-20) directly, and this script used to carry a whole
+verify_team_id_mapping() cross-check because that numeric id is NOT
+guaranteed to mean the same club across seasons (confirmed empirically --
+id 3 was Bournemouth in 2023-24/2024-25 but Burnley in 2025-26 in this
+project's own training data). That verification existed only because the
+model consumed the numeric id directly; now that training_data.csv,
+modeling/features.py, and build_live_features.py all use team_name/
+opponent_name instead, there is no id<->name mapping left for the MODEL to
+get wrong -- team_h_name/team_a_name below already ARE the stable
+representation, straight from this season's live bootstrap-static "teams"
+table, which is authoritative for what a name means this season by
+definition. What's still worth checking (report_unseen_team_names(),
+below) is only informational: which of this season's team names have
+never appeared in training_data.csv at all (e.g. a newly-promoted club) --
+not a mapping-correctness gate, just a heads-up. build_live_features.py
+reports this again, and acts on it, when it actually builds prediction
+inputs.
 """
 
 from pathlib import Path
@@ -35,35 +45,6 @@ def fetch_json(url):
     return response.json()
 
 
-def infer_current_season(fixtures_df):
-    """Infer the season string (e.g. "2026-27") from fixture kickoff dates.
-
-    The Premier League season runs roughly August through May. A fixture
-    kicking off Jul-Dec belongs to the season starting that calendar year;
-    Jan-Jun belongs to the season that started the previous calendar year.
-
-    This used to be a hardcoded CURRENT_SEASON = "2025-26" constant, which
-    silently went stale the moment the season rolled over: once 2026-27
-    fixtures start finishing, comparing them against 2025-26 rows in
-    training_data.csv (same team name + GW number, but a completely
-    different fixture) would very likely fail the cross-check with a false
-    "WARNING: mismatch" -- or worse, coincidentally "pass" -- neither of
-    which says anything real about whether *this season's* id<->name
-    mapping is correct. Deriving the season from the fetched fixtures
-    themselves keeps this correct across season rollovers.
-    """
-
-    kickoffs = pd.to_datetime(fixtures_df["kickoff_time"], errors="coerce").dropna()
-
-    if kickoffs.empty:
-        return None
-
-    reference = kickoffs.min()
-    start_year = reference.year if reference.month >= 7 else reference.year - 1
-
-    return f"{start_year}-{str(start_year + 1)[-2:]}"
-
-
 def build_team_map(bootstrap):
     teams = pd.DataFrame(bootstrap["teams"])
     return teams.set_index("id")["name"].to_dict()
@@ -78,100 +59,37 @@ def build_fixtures_dataframe(fixtures, team_map):
     return df
 
 
-def verify_team_id_mapping(fixtures_df, team_map):
-    """Cross-check the id<->name mapping against fixtures the training
-    data has already seen played this season.
-
-    See the module docstring for why this matters: a silently wrong
-    mapping here would degrade any prediction built on top of it, rather
-    than erroring loudly.
+def report_unseen_team_names(fixtures_df):
+    """Which of this fetch's team names have never appeared in
+    training_data.csv. Informational only -- see module docstring for why
+    this is no longer a correctness gate the way the old numeric-id
+    cross-check was.
     """
 
     if not TRAINING_DATA_FILE.exists():
-        print(
-            "(training_data.csv not found -- "
-            "skipping team id/name cross-check)"
-        )
-        return
-
-    season = infer_current_season(fixtures_df)
-
-    if season is None:
-        print(
-            "(could not determine the current season from fixture "
-            "kickoff times -- skipping team id/name cross-check)"
-        )
+        print("(training_data.csv not found -- skipping team name check)")
         return
 
     training = pd.read_csv(TRAINING_DATA_FILE)
-    season_rows = training[training["season"] == season]
+    known_teams = set(training["team_name"].unique())
 
-    if season_rows.empty:
-        print(
-            f"(no {season} rows in training_data.csv yet -- skipping "
-            f"team id/name cross-check; this is expected before any "
-            f"{season} results have been ingested into training data, "
-            f"e.g. at the very start of a season)"
-        )
-        return
-
-    played = fixtures_df[fixtures_df["finished"] == True]
-
-    checked = 0
-    mismatches = 0
-
-    for _, fixture in played.iterrows():
-        gw = fixture["event"]
-
-        if pd.isna(gw):
-            continue
-
-        home_name = fixture["team_h_name"]
-        away_name = fixture["team_a_name"]
-        home_id = fixture["team_h"]
-        away_id = fixture["team_a"]
-
-        # A home-side player's opponent_team should be the away team's id
-        # (and vice versa) for that same gameweek.
-        home_rows = season_rows[
-            (season_rows["team"] == home_name)
-            & (season_rows["GW"] == gw)
-        ]
-
-        away_rows = season_rows[
-            (season_rows["team"] == away_name)
-            & (season_rows["GW"] == gw)
-        ]
-
-        if len(home_rows):
-            checked += 1
-            if not (home_rows["opponent_team"] == away_id).all():
-                mismatches += 1
-
-        if len(away_rows):
-            checked += 1
-            if not (away_rows["opponent_team"] == home_id).all():
-                mismatches += 1
+    live_teams = set(fixtures_df["team_h_name"]) | set(fixtures_df["team_a_name"])
+    unseen = sorted(live_teams - known_teams)
 
     print()
-
-    if checked == 0:
+    if unseen:
         print(
-            "Could not find any matching played fixtures to cross-check "
-            "against training_data.csv -- proceed with caution, this "
-            "mapping is unverified."
-        )
-    elif mismatches == 0:
-        print(
-            f"Team id<->name mapping verified against {checked} "
-            f"already-played fixture side(s) in training_data.csv. OK."
+            f"{len(unseen)} team name(s) in this fetch never appear in "
+            f"training_data.csv (new to the Premier League this season, "
+            f"e.g. promoted): {unseen}. Not an error -- "
+            f"OneHotEncoder(handle_unknown='ignore') correctly treats "
+            f"these as unseen categories now that team/opponent are "
+            f"represented by name rather than a reused numeric id."
         )
     else:
         print(
-            f"WARNING: {mismatches}/{checked} fixture side(s) did NOT "
-            f"match training_data.csv's opponent_team ids. Do NOT trust "
-            f"fixtures.csv's team ids for predictions until this is "
-            f"resolved."
+            "All team names in this fetch already appear in "
+            "training_data.csv. OK."
         )
 
 
@@ -188,7 +106,7 @@ def main():
     print(f"Fixtures fetched: {len(fixtures_df):,}")
     print(f"Saved to: {OUTPUT_FILE}")
 
-    verify_team_id_mapping(fixtures_df, team_map)
+    report_unseen_team_names(fixtures_df)
 
     upcoming = fixtures_df[fixtures_df["finished"] == False].copy()
 

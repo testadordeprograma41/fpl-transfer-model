@@ -30,14 +30,27 @@ IDENTIFICATION_COLUMNS = [
     "element",
     "name",
     "position",
-    "team",
+    "team_name",
 ]
 
 # Information that is known ahead of the upcoming fixture (as opposed to
 # results, which are only known after it has been played).
+#
+# "opponent_name" (not "opponent_team"): as of 2026-08-25, team/opponent
+# are represented by their stable name, not FPL's raw numeric per-season
+# team id. That id is NOT the same category across seasons -- e.g. id 3
+# was Bournemouth in 2023-24/2024-25 but Burnley in 2025-26 in this
+# project's own training data, confirmed by deriving each season's
+# id<->name mapping directly from data/historical/historical_gws.csv (see
+# build_training_data.py's build_season_team_name_maps()). Treating those
+# as the same OneHotEncoder category silently taught the model that two
+# unrelated clubs were the same opponent. Team NAMES don't have that
+# problem -- a club keeps its name across seasons regardless of which
+# numeric id the API happens to assign it that year. See CHANGELOG.md
+# 2026-08-25 for the full writeup.
 FIXTURE_KNOWN_COLUMNS = [
     "value",
-    "opponent_team",
+    "opponent_name",
     "was_home",
 ]
 
@@ -69,8 +82,8 @@ NUMERIC_FEATURES = (
 
 CATEGORICAL_FEATURES = [
     "position",
-    "team",
-    "opponent_team",
+    "team_name",
+    "opponent_name",
     "was_home",
 ]
 
